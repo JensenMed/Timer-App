@@ -1,7 +1,10 @@
 
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import List from './List'
-import Start from './Start'
+import Random from './Random'
+// import Start from './Start'
+// import useLongPress from './Random.js'; 
+
 
 const Clock = () => {
 
@@ -11,27 +14,30 @@ const Clock = () => {
     const[total, setTotal] = useState(0)
     const[btn, setBtn] = useState(false)
 
-    
+
+
+
+    const[press, setPress] = useState()
+    console.log(press)
+
 
     const[start, setStart] = useState(false)
-    // const[timer, setTimer] = useState({
-    //   "seconds" : seconds,
-    //   "minutes": minutes,
-    //   "hours": hours,
-    // })
 
-
+    const timerRef = useRef()
+ 
 
 
   // Handle Seconds Add
     function handleAddSeconds(id){
+      // alert('click')
       if(seconds >= 0 && seconds < 59){
         setSeconds(prevState => prevState + 1)
+        onTouchStart()
       }
+
       id.preventDefault()
 
     }
-
   // Handle seconds subtract
 
     function handleMinusSeconds(id){
@@ -40,6 +46,25 @@ const Clock = () => {
         setSeconds(prevState => prevState -1)
       }
       id.preventDefault()
+    }
+
+
+
+
+    function handleSecondsLongPlus(){
+      if(seconds >= 0 && seconds <= 59){
+        setPress('addSeconds')
+        onTouchStart()
+      }
+      // e.preventDefault()
+    }
+  
+
+
+    function handleSecondsLongMinus(){
+
+      // setPress("minusSeconds")
+      // onTouchStart()
     }
 
 
@@ -135,11 +160,66 @@ const Clock = () => {
 
     },[start])
 
-    
-
 
 
     
+    // function onMouseDown(e){
+    //   console.log("Mouse down")
+
+    //   e.preventDefault()
+    //   // startLongPress()
+    // }
+    
+    // function onMouseUp(e){
+    //   console.log("Mouse up")
+    //   e.preventDefault()
+    //   // startLongPress()
+    // }
+
+
+
+    function onTouchStart(){
+      console.log("Start")
+      // setPress("addSeconds")
+      // e.preventDefault()
+      startLongPress()
+    }
+
+    function onTouchEnd(e){
+      console.log("end")
+       clearInterval(timerRef)
+
+      e.preventDefault()
+    }
+
+
+    function startLongPress(){
+      timerRef.current = setInterval(() =>{
+        if(press === "addSeconds"){
+            setSeconds(seconds => seconds + 1)
+            setPress("")
+        }
+
+        // if(press === "minusSeconds"){
+        //   setPress("")
+        //   setSeconds(seconds => seconds - 1)
+        // }
+      }, 100)
+    }
+
+    // function endLongPress(){
+    //   timerRef.current = setInterval(() =>{
+    //     setSeconds(seconds => seconds + 1)
+    //   }, 500)
+    // }
+
+
+
+
+
+
+
+
 
 
 
@@ -160,8 +240,8 @@ const Clock = () => {
   return (
     <div>
         <form >
-        <button disabled = {start == true ? true: false} onClick={handleAddSeconds} >+</button>
-        <button disabled = {start == true ? true: false} onClick={handleMinusSeconds}>-</button>
+        <button disabled = {start == true ? true: false} onTouchStart = {handleSecondsLongPlus} onTouchEnd = {onTouchEnd}  >+</button>
+        <button disabled = {start == true ? true: false}  onTouchStart = {handleSecondsLongMinus} onTouchEnd = {onTouchEnd} onClick={handleMinusSeconds}>-</button>
         <span>{seconds >= 10 ? seconds : "0" + seconds}</span>
         </form>
 
@@ -178,10 +258,21 @@ const Clock = () => {
         <button disabled = {start == true ? true: false} onClick={handleMinusHours}>-</button>
         <span>{hours >= 10 ? hours : "0" + hours}</span>
         </form>
+        {/* <button 
+        onMouseDown={onMouseDown}
+        onMouseUp = {onMouseup}
+        onTouchEnd = {onTouchEnd}
+        onTouchStart = {onTouchStart}
+        
+        >
+          Click
+        </button> */}
 
         <span>
           <button onClick={startCountdown} disabled = {btn === true? true: false}>Start</button>
         </span>
+
+    
 
 
         <div>
@@ -211,6 +302,7 @@ const Clock = () => {
           
           />
         </div>
+        <Random />
         
 
 
