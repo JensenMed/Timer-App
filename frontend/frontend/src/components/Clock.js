@@ -11,7 +11,7 @@ const Clock = () => {
     const[total, setTotal] = useState(0)
     const[btn, setBtn] = useState(false)
 
-    console.log(btn)
+    
 
     const[start, setStart] = useState(false)
     // const[timer, setTimer] = useState({
@@ -19,6 +19,7 @@ const Clock = () => {
     //   "minutes": minutes,
     //   "hours": hours,
     // })
+
 
 
 
@@ -35,7 +36,7 @@ const Clock = () => {
 
     function handleMinusSeconds(id){
 
-      if(seconds >= 1 && seconds < 59){
+      if(seconds >= 1 && seconds <= 59){
         setSeconds(prevState => prevState -1)
       }
       id.preventDefault()
@@ -63,7 +64,7 @@ const Clock = () => {
 
     function handleMinusMinutes(id){
 
-      if(minutes >= 1 && minutes < 59){
+      if(minutes >= 1 && minutes <= 59){
         setMinutes(prevState => prevState -1)
       }
       id.preventDefault()
@@ -102,50 +103,39 @@ const Clock = () => {
     //start countdown
 
     function startCountdown(){
-      console.log(start)
       setStart(!start)
-      // let count = 0
-      // const myTimer = setTimeout(() => {
-      //   count +=1
-      //   if(count === 2){
-      //     setBtn(false)
-      //     clearTimeout(myTimer)
-
-      //   }
-      //   if(count < 2){
-      //     setBtn(true)
-
-      //   }
-        
-      // }, 1000);
-
-
 
     }
 
 
 
     //try and mak estart btn dissapear fro 2 seconds after click then reappear
+
     useEffect(() =>{
-      let count = 0
-      const myTimer = setTimeout(() => {
-        count +=1
-        if(count === 2){
-          setBtn(false)
-          clearTimeout(myTimer)
+        if(start === true){
+
+          let count = 0
+          const myTimer = setInterval(() => {
+            count +=1
+            if(count === 12){
+              setBtn(false)
+              clearInterval(myTimer)
+    
+            }
+            if(count < 12){
+              setBtn(true)
+    
+            }
+            
+          }, 250);
+  
 
         }
-        if(count < 2){
-          setBtn(true)
 
-        }
-        
-      }, 1000);
-
-      // startCountdown()
-      
 
     },[start])
+
+    
 
 
 
