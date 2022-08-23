@@ -17,13 +17,14 @@ const Clock = () => {
 
 
 
-    const[press, setPress] = useState()
-    console.log(press)
+    const[press, setPress] = useState("")
+    // console.log(press)
 
 
     const[start, setStart] = useState(false)
 
     const timerRef = useRef()
+    const secondsPlusRef = useRef(null)
  
 
 
@@ -32,40 +33,27 @@ const Clock = () => {
       // alert('click')
       if(seconds >= 0 && seconds < 59){
         setSeconds(prevState => prevState + 1)
-        onTouchStart()
       }
 
       id.preventDefault()
 
     }
+
+
+
+
+
+
   // Handle seconds subtract
 
     function handleMinusSeconds(id){
-
       if(seconds >= 1 && seconds <= 59){
         setSeconds(prevState => prevState -1)
+        // setPress('secondsMinus')
       }
       id.preventDefault()
     }
 
-
-
-
-    function handleSecondsLongPlus(){
-      if(seconds >= 0 && seconds <= 59){
-        setPress('addSeconds')
-        onTouchStart()
-      }
-      // e.preventDefault()
-    }
-  
-
-
-    function handleSecondsLongMinus(){
-
-      // setPress("minusSeconds")
-      // onTouchStart()
-    }
 
 
 
@@ -134,7 +122,96 @@ const Clock = () => {
 
 
 
-    //try and mak estart btn dissapear fro 2 seconds after click then reappear
+    //Long press functions
+
+    function hoverPress(){
+      setPress("")
+
+    }
+
+
+
+
+    function longhPressStart(e){
+      const nameVal = e.target.name
+      console.log(nameVal)
+
+
+      //Seconds add Long press
+      if(nameVal === "secondsAdd"){
+        if(seconds >= 0 && seconds < 59){
+          setPress('addSeconds')
+          startLongPress()
+          
+        }
+
+      }
+
+      //Seconds minus long press
+      if(nameVal === "secondsMinus"){
+        if(seconds >= 0 && seconds < 59){
+          setPress('minusSeconds')
+          startLongPress()
+          
+        }
+
+      }
+
+
+
+      //minutes add long press
+      if(nameVal === "minutesAdd"){
+        if(minutes >= 0 && minutes < 59){
+          setPress('addMinutes')
+          startLongPress()
+          
+        }
+
+      }
+
+      //minutes minus long press
+
+      if(nameVal === "minutesMinus"){
+        if(minutes >= 0 && minutes < 59){
+          setPress('minusMinutes')
+          startLongPress()
+          
+        }
+
+      }
+
+      //hours add long press
+
+      
+      if(nameVal === "hoursAdd"){
+        if(hours >= 0 && hours <= 24){
+          setPress('addHours')
+          startLongPress()
+          
+        }
+
+      }
+
+      if(nameVal === "hoursMinus"){
+        if(hours >= 0 && hours <= 24){
+          setPress('minusHours')
+          startLongPress()
+          
+        }
+
+      }
+
+
+
+
+
+
+      e.preventDefault()
+
+
+    }
+
+
 
     useEffect(() =>{
         if(start === true){
@@ -162,58 +239,123 @@ const Clock = () => {
 
 
 
-    
-    // function onMouseDown(e){
-    //   console.log("Mouse down")
-
-    //   e.preventDefault()
-    //   // startLongPress()
-    // }
-    
-    // function onMouseUp(e){
-    //   console.log("Mouse up")
-    //   e.preventDefault()
-    //   // startLongPress()
-    // }
 
 
 
-    function onTouchStart(){
-      console.log("Start")
-      // setPress("addSeconds")
-      // e.preventDefault()
-      startLongPress()
+
+    function longPressStop(){
+      // setPress("")
+      // console.log("jjje")
+      clearInterval(timerRef.current)
+
     }
 
-    function onTouchEnd(e){
-      console.log("end")
-       clearInterval(timerRef)
 
-      e.preventDefault()
-    }
+
+
 
 
     function startLongPress(){
       timerRef.current = setInterval(() =>{
-        if(press === "addSeconds"){
-            setSeconds(seconds => seconds + 1)
-            setPress("")
+
+        //Seconds add
+          if(press === "addSeconds"){
+            if(seconds >= 0 && seconds < 59){
+                setSeconds(seconds => seconds + 1)
+            }
+
         }
 
-        // if(press === "minusSeconds"){
-        //   setPress("")
-        //   setSeconds(seconds => seconds - 1)
-        // }
-      }, 100)
+        //Seconds minus
+
+        if(press === "minusSeconds"){
+          if(seconds >= 0 && seconds < 59){
+              setSeconds(seconds => seconds - 1)
+          }
+
+      }
+
+
+      //Minutes add
+
+      if(press === "addMinutes"){
+        if(minutes >= 0 && minutes < 59){
+            setMinutes(minutes => minutes + 1)
+        }
+
     }
 
-    // function endLongPress(){
-    //   timerRef.current = setInterval(() =>{
-    //     setSeconds(seconds => seconds + 1)
-    //   }, 500)
-    // }
+    //Minutes minus
+
+    
+    if(press === "minusMinutes"){
+      if(minutes >= 0 && minutes < 59){
+          setMinutes(minutes => minutes - 1)
+      }
+
+  }
 
 
+
+  //Hours add
+
+    if(press === "minusHours"){
+      if(hours >= 0 && hours <= 24){
+          setHours(hours => hours - 1)
+      }
+
+    }
+
+  //Hours minus
+    if(press === "addHours"){
+      if(hours >= 0 && hours <= 24){
+          setHours(hours => hours + 1)
+      }
+
+    }
+      
+
+
+      }, 95)
+    }
+
+
+    useEffect(() => {
+      const idk = secondsPlusRef.current
+      console.log(idk)
+
+      if( seconds > 59){
+        setSeconds(59)
+      }
+                        // --------> sets boundaries of seconds data
+      if( seconds < 0){
+          setSeconds(0)
+      }
+
+  
+
+      if(minutes > 59){
+        setMinutes(59)
+      }
+                          // ----> sets boundaries of minutes data
+      if(minutes < 0){
+        setMinutes(0)
+      }
+
+
+      if(hours < 0){
+        setHours(0)
+      }
+                          // ------> sets boundaries of hours data
+      if(hours > 24){ 
+        setHours(24)
+      }
+      
+
+
+
+
+    }, [seconds, minutes, hours])
 
 
 
@@ -240,34 +382,24 @@ const Clock = () => {
   return (
     <div>
         <form >
-        <button disabled = {start == true ? true: false} onTouchStart = {handleSecondsLongPlus} onTouchEnd = {onTouchEnd}  >+</button>
-        <button disabled = {start == true ? true: false}  onTouchStart = {handleSecondsLongMinus} onTouchEnd = {onTouchEnd} onClick={handleMinusSeconds}>-</button>
+        <button disabled = {start == true ? true: false || seconds >= 59? true: false} secondsPlusRef = {secondsPlusRef} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick = {handleAddSeconds} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} value = {seconds} name = "secondsAdd">+</button>
+        <button disabled = {start == true ? true: false || seconds === 0? true: false} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick = {handleMinusSeconds} onMouseOut = {hoverPress} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} value = {seconds} name = "secondsMinus" >-</button>
         <span>{seconds >= 10 ? seconds : "0" + seconds}</span>
         </form>
 
 
         <form>
-        <button disabled = {start == true ? true: false} onClick={handleAddMinutes}>+</button>
-        <button disabled = {start == true ? true: false} onClick={handleMinusMinutes}>-</button>
+        <button disabled = {start == true ? true: false || minutes === 59? true: false}  onMouseOut = {hoverPress} onClick={handleAddMinutes} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} value = {minutes} name = "minutesAdd">+</button>
+        <button disabled = {start == true ? true: false || minutes === 0? true: false} onMouseOut = {hoverPress} onClick={handleMinusMinutes} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} value = {minutes} name = "minutesMinus">-</button>
         <span>{minutes >= 10 ? minutes : "0" + minutes}</span>
         </form>
 
 
         <form>
-        <button disabled = {start == true ? true: false} onClick={handleAddHours}>+</button>
-        <button disabled = {start == true ? true: false} onClick={handleMinusHours}>-</button>
+        <button disabled = {start == true ? true: false || hours === 24? true: false} onClick={handleAddHours} onMouseOut = {hoverPress} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} value = {hours} name = "hoursAdd">+</button>
+        <button disabled = {start == true ? true: false || hours === 0? true: false} onClick={handleMinusHours} onMouseOut = {hoverPress} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} value = {hours} name = "hoursMinus">-</button>
         <span>{hours >= 10 ? hours : "0" + hours}</span>
         </form>
-        {/* <button 
-        onMouseDown={onMouseDown}
-        onMouseUp = {onMouseup}
-        onTouchEnd = {onTouchEnd}
-        onTouchStart = {onTouchStart}
-        
-        >
-          Click
-        </button> */}
-
         <span>
           <button onClick={startCountdown} disabled = {btn === true? true: false}>Start</button>
         </span>
@@ -302,7 +434,6 @@ const Clock = () => {
           
           />
         </div>
-        <Random />
         
 
 

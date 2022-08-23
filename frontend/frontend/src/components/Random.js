@@ -26,11 +26,14 @@ const Random = () => {
             LongPress()
 
         }
-
-        // setPress("")
-
+    }
 
 
+    function onClick(){
+        if(sec >= 0 && sec < 59){
+            setSeconds(sec => sec + 1)
+
+        }
     }
 
     function onTouchEnd(){
@@ -55,7 +58,7 @@ const Random = () => {
                 }
                
             }
-        }, 100)
+        }, 70)
     }
 
     useEffect(() => {
@@ -72,7 +75,7 @@ const Random = () => {
   return (
     <div>
 
-        <button onTouchStart={onTouchStart} onTouchEnd = {onTouchEnd}>{sec}</button>
+        <button onMouseDown={onTouchStart} onMouseUp= {onTouchEnd} onClick = {onClick}>{sec}</button>
         
 
 
