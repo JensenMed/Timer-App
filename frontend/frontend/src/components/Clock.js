@@ -2,6 +2,8 @@
 import React, {useState, useEffect, useRef} from 'react'
 import List from './List'
 import Random from './Random'
+import { render } from '@testing-library/react';
+// import Random from './Random';
 // import Start from './Start'
 // import useLongPress from './Random.js'; 
 
@@ -18,6 +20,8 @@ const Clock = () => {
 
 
     const[press, setPress] = useState("")
+    // const { getByText } = render(Clock);
+    // expect(getByText(/Click me/i).closest('button')).toHaveAttribute('disabled');
     // console.log(press)
 
 
@@ -31,7 +35,7 @@ const Clock = () => {
   // Handle Seconds Add
     function handleAddSeconds(id){
       // alert('click')
-      if(seconds >= 0 && seconds < 59){
+      if(seconds >= 0 && seconds <= 59){
         setSeconds(prevState => prevState + 1)
       }
 
@@ -47,7 +51,7 @@ const Clock = () => {
   // Handle seconds subtract
 
     function handleMinusSeconds(id){
-      if(seconds >= 1 && seconds <= 59){
+      if(seconds > 0 && seconds <= 59){
         setSeconds(prevState => prevState -1)
         // setPress('secondsMinus')
       }
@@ -65,7 +69,7 @@ const Clock = () => {
     //Handle minutes add
 
     function handleAddMinutes(id){
-      if(minutes >= 0 && minutes < 59){
+      if(minutes >= 0 && minutes <= 59){
         setMinutes(prevState => prevState + 1)
         
       }
@@ -149,7 +153,7 @@ const Clock = () => {
 
       //Seconds minus long press
       if(nameVal === "secondsMinus"){
-        if(seconds >= 0 && seconds < 59){
+        if(seconds > 0 && seconds <= 59){
           setPress('minusSeconds')
           startLongPress()
           
@@ -161,7 +165,7 @@ const Clock = () => {
 
       //minutes add long press
       if(nameVal === "minutesAdd"){
-        if(minutes >= 0 && minutes < 59){
+        if(minutes >= 0 && minutes <= 59){
           setPress('addMinutes')
           startLongPress()
           
@@ -172,7 +176,7 @@ const Clock = () => {
       //minutes minus long press
 
       if(nameVal === "minutesMinus"){
-        if(minutes >= 0 && minutes < 59){
+        if(minutes > 0 && minutes <= 59){
           setPress('minusMinutes')
           startLongPress()
           
@@ -193,7 +197,7 @@ const Clock = () => {
       }
 
       if(nameVal === "hoursMinus"){
-        if(hours >= 0 && hours <= 24){
+        if(hours > 0 && hours <= 24){
           setPress('minusHours')
           startLongPress()
           
@@ -269,7 +273,7 @@ const Clock = () => {
         //Seconds minus
 
         if(press === "minusSeconds"){
-          if(seconds >= 0 && seconds < 59){
+          if(seconds > 0 && seconds <= 59){
               setSeconds(seconds => seconds - 1)
           }
 
@@ -279,7 +283,7 @@ const Clock = () => {
       //Minutes add
 
       if(press === "addMinutes"){
-        if(minutes >= 0 && minutes < 59){
+        if(minutes >= 0 && minutes <= 59){
             setMinutes(minutes => minutes + 1)
         }
 
@@ -289,7 +293,7 @@ const Clock = () => {
 
     
     if(press === "minusMinutes"){
-      if(minutes >= 0 && minutes < 59){
+      if(minutes > 0 && minutes <= 59){
           setMinutes(minutes => minutes - 1)
       }
 
@@ -300,7 +304,7 @@ const Clock = () => {
   //Hours add
 
     if(press === "minusHours"){
-      if(hours >= 0 && hours <= 24){
+      if(hours > 0 && hours <= 24){
           setHours(hours => hours - 1)
       }
 
@@ -321,33 +325,46 @@ const Clock = () => {
 
 
     useEffect(() => {
-      const idk = secondsPlusRef.current
-      console.log(idk)
+      // const idk = secondsPlusRef.current
+      // console.log(idk)
 
-      if( seconds > 59){
+      if( seconds >= 59){
+        longPressStop()
+        hoverPress()
         setSeconds(59)
       }
+      console.log(seconds)
                         // --------> sets boundaries of seconds data
       if( seconds < 0){
-          setSeconds(0)
+        longPressStop()
+        hoverPress()
+        setSeconds(0)
       }
 
   
 
-      if(minutes > 59){
+      if(minutes === 59){
+        longPressStop()
+        hoverPress()
         setMinutes(59)
       }
                           // ----> sets boundaries of minutes data
       if(minutes < 0){
+        longPressStop()
+        hoverPress()
         setMinutes(0)
       }
 
 
       if(hours < 0){
+        longPressStop()
+        hoverPress()
         setHours(0)
       }
                           // ------> sets boundaries of hours data
-      if(hours > 24){ 
+      if(hours === 24){
+        longPressStop()
+        hoverPress() 
         setHours(24)
       }
       
@@ -361,7 +378,9 @@ const Clock = () => {
 
 
 
-
+    function Idk(){
+      alert("k")
+    }
 
 
 
@@ -381,8 +400,8 @@ const Clock = () => {
 
   return (
     <div>
-        <form >
-        <button disabled = {start == true ? true: false || seconds >= 59? true: false} secondsPlusRef = {secondsPlusRef} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick = {handleAddSeconds} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} value = {seconds} name = "secondsAdd">+</button>
+      <form >
+        <button disabled = {start == true ? true: false || seconds === 59? true: false} secondsPlusRef = {secondsPlusRef} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick = {handleAddSeconds} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} value = {seconds} name = "secondsAdd">+</button>
         <button disabled = {start == true ? true: false || seconds === 0? true: false} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick = {handleMinusSeconds} onMouseOut = {hoverPress} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} value = {seconds} name = "secondsMinus" >-</button>
         <span>{seconds >= 10 ? seconds : "0" + seconds}</span>
         </form>
@@ -408,13 +427,9 @@ const Clock = () => {
 
 
         <div>
-          
-          
-
-
-
-
-          <List 
+          <span onClick={Idk}>
+            
+          <List
           minutes = {minutes}
           setMinutes = {setMinutes}
 
@@ -433,7 +448,15 @@ const Clock = () => {
           setTotal = {setTotal}
           
           />
+
+          </span>
+          
+        
         </div>
+
+        <span>
+          <Random />
+        </span>
         
 
 

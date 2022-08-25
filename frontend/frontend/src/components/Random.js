@@ -1,82 +1,67 @@
-import React, {useState, useRef, useEffect} from 'react'
-
-
-
-
-
-
-
+import React, {useState, useEffect} from 'react'
+import List from './List'
 
 const Random = () => {
 
+    const[box, setBox] = useState([2,3,4])
+    // const[idk, setIdk] = useState(false)/
+    const[makeBox, setMakeBox] = useState({
+        time: "nice",
+    })
+
+    console.log(makeBox)
+
+
+    // function btn(){
+    //     setBox(!box)
+    // }
 
 
 
-    const[sec, setSeconds] = useState(0)
-    const[press, setPress] = useState()
+    // useEffect(() => {
 
-    const timerRef = useRef()
-
-
-
-    function onTouchStart(){
-        // console.log('start')
-        if(sec >= 0 && sec < 59){
-            setPress("addSeconds")
-            LongPress()
-
-        }
-    }
-
-
-    function onClick(){
-        if(sec >= 0 && sec < 59){
-            setSeconds(sec => sec + 1)
-
-        }
-    }
-
-    function onTouchEnd(){
-        console.log('end')
-        clearInterval(timerRef.current)
-    }
-
-
-    function LongPress(){
-        timerRef.current = setInterval(() => {
+    //     if(box){
+    //         setMakeBox({
+    //             time:"5"
+    //         })
+    //         idk()
             
+            
+    //     }
 
-            if(sec >= 0 && sec < 59){
-                if(sec === 59){
-                    console.log('jj')
-                }
-                if(press === "addSeconds"){
-                    // if(sec >= 0 && sec < 59){
-                        setSeconds(sec => sec + 1)
-    
-                    // }
-                }
-               
-            }
-        }, 70)
+
+
+    // }, [box])
+
+
+    function idk(){
+        makeBox.map(ele => {
+            return <List>{ele.time}</List>
+        })
     }
-
-    useEffect(() => {
-        if( sec > 59){
-            setSeconds(59)
-        }
-        if( sec < 0){
-            setSeconds(0)
-        }
-    }, [sec])
-
-
-
-  return (
+  
+  
+  
+  
+  
+  
+    return (
     <div>
 
-        <button onMouseDown={onTouchStart} onMouseUp= {onTouchEnd} onClick = {onClick}>{sec}</button>
+        <button >click me</button>
+        <h1>{box}</h1>
+
+        {/* {box && <h1>{box}</h1>} */}
+
+        {/* {idk ? } */}
+
         
+
+
+
+
+
+
 
 
 
