@@ -3,7 +3,7 @@ import List from './List'
 
 const Random = () => {
 
-    const[box, setBox] = useState([2,3,4])
+    const[box, setBox] = useState(false)
     // const[idk, setIdk] = useState(false)/
     const[makeBox, setMakeBox] = useState({
         time: "nice",
@@ -12,9 +12,9 @@ const Random = () => {
     console.log(makeBox)
 
 
-    // function btn(){
-    //     setBox(!box)
-    // }
+    function btn(){
+        setBox(!box)
+    }
 
 
 
@@ -39,6 +39,8 @@ const Random = () => {
             return <List>{ele.time}</List>
         })
     }
+
+    // const yes = true
   
   
   
@@ -48,22 +50,12 @@ const Random = () => {
     return (
     <div>
 
-        <button >click me</button>
-        <h1>{box}</h1>
-
-        {/* {box && <h1>{box}</h1>} */}
-
-        {/* {idk ? } */}
-
-        
-
-
-
-
-
-
-
-
+        <span onClick={btn} >click me</span>
+        {box && 
+        <h2>
+          Hello
+          
+        </h2>}
 
     </div>
   )
