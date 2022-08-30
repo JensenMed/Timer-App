@@ -1,7 +1,7 @@
 
 import React, {useState, useEffect, useRef} from 'react'
 import List from './List'
-import Random from './Random'
+// import Random from './Random'
 import Timer from './Timer'
 import { render } from '@testing-library/react';
 // import Random from './Random';
@@ -128,6 +128,7 @@ const Clock = () => {
           {start ? <button disabled = {btn === true? true: false} onClick={startCountdown} >Stop</button>: <button disabled = {btn === true? true: false} onClick={startCountdown} >Start</button>}
         </span>
 
+  
     
 
 
@@ -160,7 +161,7 @@ const Clock = () => {
         </div>
 
         <span>
-          <Random />
+          {/* <Random /> */}
         </span>
         
 

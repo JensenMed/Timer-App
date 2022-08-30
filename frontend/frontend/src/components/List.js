@@ -4,6 +4,17 @@ import React, { useEffect, useState } from 'react'
 
 const List = (props) => {
 
+    // const {
+    //     path,
+    //     pathLength,
+    //     stroke,
+    //     strokeDashoffset,
+    //     remainingTime,
+    //     elapsedTime,
+    //     size,
+    //     strokeWidth,
+    //   } = useCountdown({ isPlaying: true, duration: 7, colors: '#abc' })
+
 
 
     //Seconds data
@@ -26,6 +37,9 @@ const List = (props) => {
     //Hours data
     var hours = props.hours * 3600
     var setHours = props.setHours
+    // console.log(hours)
+    // console.log(seconds)
+    // console.log(minutes)
 
 
 
@@ -41,19 +55,20 @@ const List = (props) => {
 
 
     
-
+      
 
 
 
     useEffect(() => {
 
-        setTotal(seconds + minutes + hours)
+        setTotal( parseInt(seconds) + parseInt(minutes) + parseInt(hours))
+        // setTotal( seconds + minutes + hours)
     }, [seconds, minutes, hours])
 
 
 
 
-
+    console.log(total)
 
 
     var min = Math.floor((total - hours) / 60)
@@ -94,7 +109,7 @@ const List = (props) => {
 
 
     useEffect(() => {
-        // console.log(start)
+        // console.log(total)
 
         var count = total
         const myTimer = setTimeout(() => {
@@ -116,10 +131,6 @@ const List = (props) => {
     }, [start, total])
 
 
-
-
-
-
   return (
     <div>
         <span>{props.hours >= 10 ? props.hours: "0" + props.hours}:</span>
@@ -131,3 +142,19 @@ const List = (props) => {
 }
 
 export default List
+
+
+
+
+
+// <CountdownCircleTimer
+// duration= {total}
+// colors={['#004777', '#F7B801', '#A30000', '#A30000']}
+// colorsTime={[(total), total - (total * 0.25), total - (total * 0.50), total - total ]}
+// >
+// {({ remainingTime }) => {
+//     // return remainingTime
+
+// return `${props.hours >= 10 ? props.hours: "0" + props.hours}:${props.minutes >= 10 ? props.minutes: "0" + props.minutes}:${props.seconds >= 10 ? props.seconds:"0" + props.seconds}`
+// }}
+// </CountdownCircleTimer>

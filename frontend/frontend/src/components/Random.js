@@ -1,64 +1,64 @@
-import React, {useState, useEffect} from 'react'
-import List from './List'
+// import React, {useState, useEffect} from 'react'
+// import List from './List'
 
-const Random = () => {
+// const Random = () => {
 
-    const[box, setBox] = useState(false)
-    // const[idk, setIdk] = useState(false)/
-    const[makeBox, setMakeBox] = useState({
-        time: "nice",
-    })
+//     const[box, setBox] = useState(false)
+//     // const[idk, setIdk] = useState(false)/
+//     const[makeBox, setMakeBox] = useState({
+//         time: "nice",
+//     })
 
-    console.log(makeBox)
-
-
-    function btn(){
-        setBox(!box)
-    }
+//     console.log(makeBox)
 
 
+//     function btn(){
+//         setBox(!box)
+//     }
 
-    // useEffect(() => {
 
-    //     if(box){
-    //         setMakeBox({
-    //             time:"5"
-    //         })
-    //         idk()
+
+//     // useEffect(() => {
+
+//     //     if(box){
+//     //         setMakeBox({
+//     //             time:"5"
+//     //         })
+//     //         idk()
             
             
-    //     }
+//     //     }
 
 
 
-    // }, [box])
+//     // }, [box])
 
 
-    function idk(){
-        makeBox.map(ele => {
-            return <List>{ele.time}</List>
-        })
-    }
+//     function idk(){
+//         makeBox.map(ele => {
+//             return <List>{ele.time}</List>
+//         })
+//     }
 
-    // const yes = true
+//     // const yes = true
   
   
   
   
   
   
-    return (
-    <div>
+//     return (
+//     <div>
 
-        <span onClick={btn} >click me</span>
-        {box && 
-        <h2>
-          Hello
+//         <span onClick={btn} >click me</span>
+//         {box && 
+//         <h2>
+//           Hello
           
-        </h2>}
+//         </h2>}
 
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 
-export default Random
+// export default Random
