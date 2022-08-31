@@ -7,6 +7,7 @@ import { render } from '@testing-library/react';
 // import Random from './Random';
 // import Start from './Start'
 // import useLongPress from './Random.js'; 
+import './css/Clock.css'
 
 
 const Clock = () => {
@@ -76,6 +77,13 @@ const Clock = () => {
       setRenderTimer(!renderTimer)
     }
 
+    function resetValues(){
+      setSeconds(0)
+      setMinutes(0)
+      setHours(0)
+      setStart(false)
+    }
+
 
 
 
@@ -85,7 +93,7 @@ const Clock = () => {
     <div>
 
       {renderTimer && 
-      <div> 
+      <div className = "open-timer"> 
 
       <Timer 
 
@@ -123,10 +131,16 @@ const Clock = () => {
       
       
       }
+        <div className='start-clock'>
+          <span>
+            <button onClick = {resetValues}>Reset</button>
+          </span>
 
-        <span>
+        <span >
           {start ? <button disabled = {btn === true? true: false} onClick={startCountdown} >Stop</button>: <button disabled = {btn === true? true: false} onClick={startCountdown} >Start</button>}
         </span>
+
+        </div>
 
   
     

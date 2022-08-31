@@ -1,7 +1,12 @@
 
 
 import React, { useEffect, useState } from 'react'
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+// import { easeQuadInOut } from 'd3-ease';
 
+import "./css/List.css"
 const List = (props) => {
 
     // const {
@@ -68,8 +73,6 @@ const List = (props) => {
 
 
 
-    console.log(total)
-
 
     var min = Math.floor((total - hours) / 60)
     var sec = total % 60
@@ -131,12 +134,68 @@ const List = (props) => {
     }, [start, total])
 
 
-  return (
-    <div>
-        <span>{props.hours >= 10 ? props.hours: "0" + props.hours}:</span>
-        <span>{props.minutes >= 10 ? props.minutes: "0" + props.minutes}:</span>
-        <span>{props.seconds >= 10 ? props.seconds:"0" + props.seconds}</span>
 
+    // useEffect(() => {
+    //   if()
+
+    // }, [start])
+
+    console.log(total)
+  return (
+    <div className = 'circle'>
+        {/* <span>{props.hours >= 10 ? props.hours: "0" + props.hours}:</span>
+        <span>{props.minutes >= 10 ? props.minutes: "0" + props.minutes}:</span>
+        <span>{props.seconds >= 10 ? props.seconds:"0" + props.seconds}</span> */}
+
+
+{/* 
+
+        <CircularProgressbarWithChildren value={total}>
+  {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
+  {/* <img style={{ width: 40, marginTop: -5 }} src="https://i.imgur.com/b9NyUGm.png" alt="doge" /> */}
+  {/* <div style={{ fontSize: 12, marginTop: -5 }}>
+    <strong>66%</strong> mate
+  </div>
+</CircularProgressbarWithChildren>; */} 
+
+        
+        <CircularProgressbar  value={total} maxValue = {start === true ? 100: total} text={`${props.hours >= 10 ? props.hours: "0" + props.hours}:${props.minutes >= 10 ? props.minutes: "0" + props.minutes}:${props.seconds >= 10 ? props.seconds:"0" + props.seconds}`} styles={{
+    // Customize the root svg element
+    root: {},
+    // Customize the path, i.e. the "completed progress"
+    path: {
+      // Path color
+      stroke: 'purple',
+      // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+      strokeLinecap: 'butt',
+      // Customize transition animation
+      transition: 'stroke-dashoffset 0.5s ease 0s',
+      // Rotate the path
+      transform: 'rotate(0.25turn)',
+      transformOrigin: 'center center',
+    },
+    // Customize the circle behind the path, i.e. the "total progress"
+    trail: {
+      // Trail color
+      stroke: 'gray',
+      // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+      strokeLinecap: 'butt',
+      // Rotate the trail
+      transform: 'rotate(0.25turn)',
+      transformOrigin: 'center center',
+    },
+    // Customize the text
+    text: {
+      // Text color
+      fill: 'purple',
+      // Text size
+      fontSize: '16px',
+    },
+    // Customize background - only used when the `background` prop is true
+    background: {
+      fill: 'red',
+    },
+  }}/>
     </div>
   )
 }

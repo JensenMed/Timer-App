@@ -1,0 +1,167 @@
+
+
+.container{
+    /* background-color: aliceblue; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-40%, -40%);
+
+}
+
+.seconds-form{
+    background-color: aliceblue;
+    position: relative;
+    left: 190%;
+    top: 50%;
+    transform: translate(-40%, -350%);
+
+}
+
+
+
+.minutes-form{
+    background-color: aliceblue;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -450%);
+
+
+}
+
+
+.hours-form{
+    background-color: aliceblue;
+    position: relative;
+    left: -90%;
+    top: 50%;
+    transform: translate(-50%, -550%);
+}
+
+@media (max-width: 600px){
+    
+
+    .container{
+        /* background-color: aliceblue; */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+        
+    .seconds-form{
+        /* background-color: aliceblue; */
+        position: relative;
+        left: 190%;
+        top: 50%;
+        width: 45px;
+        border: 2px;
+        border-color: black;
+        transform: translate(-10%, -20%);
+    
+    }
+    
+    
+    
+    .minutes-form{
+        /* background-color: aliceblue; */
+        position: relative;
+        width: 45px;
+        border: 2px;
+        border-color: black;
+        left: 50%;
+        top: 50%;
+        transform: translate(-65%, -120%);
+    
+    
+    }
+    
+    
+    .hours-form{
+        /* background-color: aliceblue; */
+        position: relative;
+        width: 45px;
+        border: 2px;
+        border-color: black;
+        left: -90%;
+        top: 50%;
+        transform: translate(-120%, -219%);
+    }
+
+
+
+    /**
+    Seconds buttons
+    */
+
+    .add-seconds{
+      display: none;
+    }
+    .minus-seconds{
+        display: none;
+     }
+
+      /**
+    Minutes buttons
+    */
+
+    .add-minutes{
+        display: none;
+     }
+    .minus-minutes{
+        display: none;
+    }
+
+     /**
+    Hours buttons
+    */
+
+    .add-hours{
+        display: none;
+     }
+
+    .minus-hours{
+         display: none;
+    }
+ 
+ 
+
+
+
+
+
+
+}
+
+
+
+
+
+
+/**
+
+Input stuff
+*/
+
+.inp-seconds{
+    width: 60px;
+    height: 40px;
+    border: 2px;
+    border-color: black;
+}
+
+.inp-minutes{
+    width: 60px;
+    height: 40px;
+    border: 2px;
+    border-color: black;
+}
+
+.inp-hours{
+    width: 60px;
+    height: 40px;
+    border: 2px;
+    border-color: black;
+}
