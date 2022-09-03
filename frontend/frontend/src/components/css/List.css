@@ -5,11 +5,39 @@
 .circle{
     height: 50%;
     width: 50%;
+    height: 1200px;
+    width: 1200px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     padding: 10px;
     z-index: 1;
+    
+}
+
+
+
+
+
+
+
+@media(max-width: 500px){
+
+    
+
+.circle{
+    height: 80%;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -30%);
+    padding: 10px;
+    z-index: 1;
+    
+}
+
+    
     
 }

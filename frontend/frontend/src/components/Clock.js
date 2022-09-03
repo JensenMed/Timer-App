@@ -8,6 +8,7 @@ import { render } from '@testing-library/react';
 // import Start from './Start'
 // import useLongPress from './Random.js'; 
 import './css/Clock.css'
+import Images from './images/images';
 
 
 const Clock = () => {
@@ -17,6 +18,12 @@ const Clock = () => {
     const[hours, setHours] = useState(0)
     const[total, setTotal] = useState(0)
     const[btn, setBtn] = useState(false)
+    const[title, setTitle] = useState("")
+    const[endSound, setEndSound] = useState()
+
+    const[image,setImage] = useState()
+
+
 
 
 
@@ -74,7 +81,12 @@ const Clock = () => {
 
 
     function handleTimer(){
-      setRenderTimer(!renderTimer)
+      if(start === false){
+        setRenderTimer(!renderTimer)
+
+      }else{
+        setRenderTimer(false)
+      }
     }
 
     function resetValues(){
@@ -92,10 +104,41 @@ const Clock = () => {
   return (
     <div>
 
+      <h1 className='title'>{title}</h1>
+
+
+
+      {Images && (Images.map(ele => {
+        if(ele.label === image){
+          if(ele.value === ""){
+            return<div></div>
+          }
+          return <img className = "image" src = {ele.value} key = {ele.id}/>
+        }
+
+      }))
+      
+      }
+
       {renderTimer && 
       <div className = "open-timer"> 
 
       <Timer 
+
+      image = {image}
+      setImage = {setImage}
+
+      total = {total}
+      setTotal = {setTotal}
+
+      renderTimer = {renderTimer}
+      setRenderTimer = {setRenderTimer}
+
+      endSound = {endSound}
+      setEndSound = {setEndSound}
+
+      title = {title}
+      setTitle = {setTitle}
 
       btn = {btn}
       setBtn = {setBtn}
@@ -131,13 +174,13 @@ const Clock = () => {
       
       
       }
-        <div className='start-clock'>
-          <span>
-            <button onClick = {resetValues}>Reset</button>
-          </span>
+        <div >
 
         <span >
-          {start ? <button disabled = {btn === true? true: false} onClick={startCountdown} >Stop</button>: <button disabled = {btn === true? true: false} onClick={startCountdown} >Start</button>}
+          {start ? <button className='start-clock' disabled = {btn === true || total === 0? true: false} onClick={startCountdown} >Stop</button>: <button className='start-clock' disabled = {btn === true || total === 0 ? true: false} onClick={startCountdown} >Start</button>}
+        </span>
+        <span>
+            <button disabled = {start === true || total === 0? true: false} className = 'reset-clock' onClick = {resetValues}>Reset</button>
         </span>
 
         </div>
@@ -150,6 +193,12 @@ const Clock = () => {
           <span onClick = {handleTimer}>
             
           <List
+
+          endSound = {endSound}
+          setEndSound = {setEndSound}
+
+
+
           minutes = {minutes}
           setMinutes = {setMinutes}
 

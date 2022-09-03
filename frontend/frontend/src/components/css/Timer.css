@@ -1,8 +1,8 @@
 
 
-.container{
+/* .container{
     /* background-color: aliceblue; */
-    position: absolute;
+    /* position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-40%, -40%);
@@ -36,10 +36,81 @@
     position: relative;
     left: -90%;
     top: 50%;
-    transform: translate(-50%, -550%);
-}
+    border-radius: 20px;
+    border: 2px solid black;
+    transform: translate(-50%, -550%); */
+/* }  */
 
 @media (max-width: 600px){
+
+
+
+    .semi-1{
+
+        position: absolute;
+        transform: translate(1100%, -330%);
+        height: 20px;
+        font-size: 40px;
+        font-weight: bold;
+
+    }
+
+    .semi-2{
+        /* background-color: wheat; */
+        position: absolute;
+        transform: translate(320%, -530%);
+        height: 20px;
+        font-size: 40px;
+        font-weight: bold;
+
+    }
+
+
+    .start-timer{
+        position: absolute;
+        transform: translate(50%, 30%);
+        border: 2px solid black;
+        background-color: whitesmoke;
+        border-radius: 20px;
+        height: 40px;
+        width: 60px;
+        box-shadow: 0 1.5px #999;
+    }
+
+    .start-timer:active{
+        position: absolute;
+        transform: translate(50%, 30%);
+        border: 2px solid black;
+        border-radius: 20px;
+        height: 40px;
+        width: 60px;
+        background-color: purple;
+    }
+
+    .reset-timer{
+        position: absolute;
+        align-items: center;
+        background-color: whitesmoke;
+        border: 2px solid black;
+        border-radius: 20px;
+        height: 40px;
+        width: 60px;
+        justify-content: center;
+        transform: translate(180%, 30%);
+        box-shadow: 0 1.5px #999;
+    }
+
+    .reset-timer:active{
+        position: absolute;
+        align-items: center;
+        background-color: purple;
+        border: 2px solid black;
+        border-radius: 20px;
+        height: 40px;
+        width: 60px;
+        justify-content: center;
+        transform: translate(180%, 30%);
+    }
     
 
     .container{
@@ -51,52 +122,111 @@
 
     }
         
-    .seconds-form{
+    /* .seconds-form{
         /* background-color: aliceblue; */
-        position: relative;
+        /* position: relative;
         left: 190%;
         top: 50%;
         width: 45px;
-        border: 2px;
-        border-color: black;
-        transform: translate(-10%, -20%);
+        transform: translate(-500%, -20%);
     
-    }
+    } */
     
     
     
-    .minutes-form{
+    /* .minutes-form{
         /* background-color: aliceblue; */
-        position: relative;
+        /* position: relative;
+        text-align: center;
         width: 45px;
         border: 2px;
         border-color: black;
         left: 50%;
         top: 50%;
-        transform: translate(-65%, -120%);
+        transform: translate(-73%, -120%);
     
     
-    }
+    } */
     
     
-    .hours-form{
+    /* .hours-form{ */
+        /* visibility: hidden; */
         /* background-color: aliceblue; */
-        position: relative;
+        /* position: relative;
+        text-align: center;
         width: 45px;
         border: 2px;
-        border-color: black;
-        left: -90%;
+        border: 1px solid black;
+        left: -20%;
         top: 50%;
-        transform: translate(-120%, -219%);
+        transform: translate(40%, -219%);
+    } */ 
+
+
+
+    .title-inp{
+        position: absolute;
+        transform: translate(-11%, 0%);
+        border: 1px solid black;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        height: 30px;
+        top:20%;
+        width: 200px; 
+        margin: 20px;
+    }
+
+
+    .select-inp{
+        position: absolute;
+        height: 20px;
+        transform: translate(0%, -150%);
+        font-size: 20px;
+        width: 200px;
+        z-index: 5;
+
+    }
+
+
+    .inp-seconds{
+        text-align: center;
+        font-size: large;
+        width: 60px;
+        height: 40px;
+        border: 2px solid black;
+        border-radius: 10px;
+        transform: translate(270%, -50%);
+    }
+    
+    .inp-minutes{
+        text-align: center;
+        font-size: large;
+        width: 60px;
+        height: 40px;
+        border-radius: 10px;
+        border: 2px solid black;
+        transform: translate(108%, -150%);
+    }
+    
+    .inp-hours{
+        text-align: center;
+        font-size: large;
+        width: 60px;
+        height: 40px;
+        border-radius: 10px;
+        border: 2px solid black;
+        transform: translate(-55%, -250%);
     }
 
 
 
-    /**
+    /* *
     Seconds buttons
     */
 
-    .add-seconds{
+     .add-seconds{
       display: none;
     }
     .minus-seconds{
@@ -112,9 +242,9 @@
      }
     .minus-minutes{
         display: none;
-    }
+    } 
 
-     /**
+/* 
     Hours buttons
     */
 
@@ -123,8 +253,8 @@
      }
 
     .minus-hours{
-         display: none;
-    }
+        display: none;
+    }  
  
  
 

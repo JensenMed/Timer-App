@@ -4,21 +4,18 @@ import React, { useEffect, useState } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import useSound from 'use-sound';
+import ReactAudioPlayer from 'react-audio-player';
 // import { easeQuadInOut } from 'd3-ease';
+import sounds from './sounds/sounds'
 
 import "./css/List.css"
 const List = (props) => {
 
-    // const {
-    //     path,
-    //     pathLength,
-    //     stroke,
-    //     strokeDashoffset,
-    //     remainingTime,
-    //     elapsedTime,
-    //     size,
-    //     strokeWidth,
-    //   } = useCountdown({ isPlaying: true, duration: 7, colors: '#abc' })
+
+  const endSound = props.endSound
+
+  const[over, setOver] = useState(false)
 
 
 
@@ -112,7 +109,7 @@ const List = (props) => {
 
 
     useEffect(() => {
-        // console.log(total)
+
 
         var count = total
         const myTimer = setTimeout(() => {
@@ -130,36 +127,44 @@ const List = (props) => {
 
 
 
-
     }, [start, total])
 
 
 
-    // useEffect(() => {
-    //   if()
+    
+    function handleMouseOver(){
 
-    // }, [start])
+      setOver(true)
+    }
 
-    console.log(total)
+    function handleMouseOut(){
+      setOver(false)
+    }
+
+
+
+
+  
+
+
+
+
   return (
-    <div className = 'circle'>
-        {/* <span>{props.hours >= 10 ? props.hours: "0" + props.hours}:</span>
-        <span>{props.minutes >= 10 ? props.minutes: "0" + props.minutes}:</span>
-        <span>{props.seconds >= 10 ? props.seconds:"0" + props.seconds}</span> */}
+    <div  className = 'circle'>
+      {total === 0 ? <ReactAudioPlayer
+      src= {endSound}
+      autoPlay = {true}
+      />: ""}
 
 
-{/* 
-
-        <CircularProgressbarWithChildren value={total}>
-  {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
-  {/* <img style={{ width: 40, marginTop: -5 }} src="https://i.imgur.com/b9NyUGm.png" alt="doge" /> */}
-  {/* <div style={{ fontSize: 12, marginTop: -5 }}>
-    <strong>66%</strong> mate
-  </div>
-</CircularProgressbarWithChildren>; */} 
+      
 
         
-        <CircularProgressbar  value={total} maxValue = {start === true ? 100: total} text={`${props.hours >= 10 ? props.hours: "0" + props.hours}:${props.minutes >= 10 ? props.minutes: "0" + props.minutes}:${props.seconds >= 10 ? props.seconds:"0" + props.seconds}`} styles={{
+
+
+        <div onTouchMove={handleMouseOut} onMouseOver = {handleMouseOver} onMouseOut = {handleMouseOut} >
+          
+        <CircularProgressbar value={total} maxValue = {start === true ? 100: total} textColor = 'red' text={`${props.hours >= 10 ? props.hours: "0" + props.hours}:${props.minutes >= 10 ? props.minutes: "0" + props.minutes}:${props.seconds >= 10 ? props.seconds:"0" + props.seconds}`} styles={{
     // Customize the root svg element
     root: {},
     // Customize the path, i.e. the "completed progress"
@@ -186,8 +191,9 @@ const List = (props) => {
     },
     // Customize the text
     text: {
+      // textColor: '#f88',
       // Text color
-      fill: 'purple',
+      fill: `${over===true ? 'blue': 'purple'}`,
       // Text size
       fontSize: '16px',
     },
@@ -195,7 +201,13 @@ const List = (props) => {
     background: {
       fill: 'red',
     },
-  }}/>
+
+  }}></CircularProgressbar>
+
+        </div>
+
+
+        
     </div>
   )
 }

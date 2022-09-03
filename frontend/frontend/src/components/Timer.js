@@ -1,6 +1,9 @@
 
-import React, {useEffect, useState, useRef} from 'react'
+import React, {useEffect, useState, useRef, useMemo} from 'react'
 import './css/Timer.css'
+import Select from 'react-select'
+import sounds from './sounds/sounds'
+
 
 const Timer = (props) => {
 
@@ -17,6 +20,20 @@ const Timer = (props) => {
     const setHours = props.setHours
     const start = props.start
     const setStart = props.setStart
+    const title = props.title
+    const setTitle = props.setTitle
+    const total = props.total
+    const setTotal = props.setTotal
+
+    const endSound = props.endSound
+    const setEndSound = props.setEndSound
+
+    const renderTimer = props.renderTimer
+    const setRenderTimer = props.setRenderTimer
+    const image = props.image
+    const setImage = props.setImage
+
+
 
 
     // const[disabledsec, setDisabledSec] = useState(false)
@@ -31,7 +48,6 @@ const Timer = (props) => {
     // const[start, setStart] = useState(false)
 
     const timerRef = useRef()
-    const secondsPlusRef = useRef(null)
     const longPressInit = useRef()
  
 
@@ -123,6 +139,7 @@ const Timer = (props) => {
   //   //start countdown
 
     function startCountdown(){
+      setRenderTimer(!renderTimer)
       setStart(!start)
 
     }
@@ -484,6 +501,23 @@ const Timer = (props) => {
       setStart(false)
     }
 
+    function handleTitle(e){
+      setTitle(e.target.value)
+      e.preventDefault()
+    }
+
+
+
+    function handleSound(e){
+      sounds.map(sound => {
+        if(sound.label === e.label){
+          setEndSound(sound.value)
+          setImage(sound.label)
+        }
+      })
+    }
+
+
 
 
   return (
@@ -494,17 +528,25 @@ const Timer = (props) => {
         <button className='add-seconds' disabled = {start == true ? true: false || seconds === 59? true: false} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick = {handleAddSeconds} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} onMouseOver = {mouseOver} value = {seconds} name = "secondsAdd">+</button>
           <button className='minus-seconds' disabled = {start == true ? true: false || seconds === 0? true: false} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick = {handleMinusSeconds} onMouseOut = {hoverPress} onMouseUp = {longPressStop} onMouseOver = {mouseOver} onMouseDown = {longhPressStart} value = {seconds} name = "secondsMinus" >-</button>
           
-          <input className = 'inp-seconds' type = "text" placeholder= '00' min = "00" max = "59" value = {seconds=== 0 ? "": seconds } name = "seconds" onChange = {handleInputSeconds} maxLength = {2} />
+          <input disabled= {start ? true: false} className = 'inp-seconds' type = "text" placeholder= '00' min = "00" max = "59" value = {seconds=== 0 ? "": seconds } name = "seconds" onChange = {handleInputSeconds} maxLength = {2} />
         </form>
+  
 
         </div>
+        <div className='semi-1'>
+          :
+        </div>
+
 
         <div className='minutes-form'>
         <form>
           <button className='add-minutes' disabled = {start == true ? true: false || minutes === 59? true: false} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onMouseOut = {hoverPress} onClick={handleAddMinutes} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} value = {minutes} onMouseOver = {mouseOver} name = "minutesAdd">+</button>
           <button className='minus-minutes' disabled = {start == true ? true: false || minutes === 0? true: false} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onMouseOut = {hoverPress} onClick={handleMinusMinutes} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} value = {minutes} onMouseOver = {mouseOver} name = "minutesMinus">-</button>
-          <input className = 'inp-minutes' type = "text"  min = "0" max = "59" placeholder='00' value = {minutes === 0 ? "": minutes } name = "minutes" onChange = {handleInputSeconds} maxLength = {2}  />
+          <input  disabled= {start ? true: false} className = 'inp-minutes' type = "text"  min = "0" max = "59" placeholder='00' value = {minutes === 0 ? "": minutes } name = "minutes" onChange = {handleInputSeconds} maxLength = {2}  />
         </form>  
+        </div>
+        <div className='semi-2'>
+          :
         </div>
 
       <div className='hours-form'>
@@ -512,8 +554,21 @@ const Timer = (props) => {
           <button className='add-hours' disabled = {start == true ? true: false || hours === 24? true: false}  onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick={handleAddHours} onMouseOut = {hoverPress} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} onMouseOver = {mouseOver} value = {hours} name = "hoursAdd">+</button>
           <button className='minus-hours' disabled = {start == true ? true: false || hours === 0? true: false} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick={handleMinusHours} onMouseOut = {hoverPress} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} onMouseOver = {mouseOver} value = {hours} name = "hoursMinus">-</button>
           
-          <input  className = 'inp-hours' type = "text"  min = "0" max = "24" placeholder='00' value = {hours === 0 ? "": hours }name = "hours" onChange = {handleInputSeconds} maxLength = {2} />
+          <input disabled= {start ? true: false}  className = 'inp-hours' type = "text"  min = "0" max = "24" placeholder='00' value = {hours === 0 ? "": hours }name = "hours" onChange = {handleInputSeconds} maxLength = {2} />
         </form>
+
+      </div>
+
+
+
+      <div>
+
+          <input className='title-inp' maxLength={18} value = {title} name = "title" type = "text" placeholder='Enter a title' onChange={handleTitle}/>
+
+      </div>
+
+      <div>
+        <Select onChange = {handleSound} value = {endSound} options = {sounds} className = 'select-inp' placeholder = 'Choose sound'></Select>
 
       </div>
 
@@ -521,34 +576,9 @@ const Timer = (props) => {
 
 
 
-
-
-
-
-
-
-
-       {/* <span>
-       <input type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress= {false}/>
-        </span>
-
-
-        <form >
-            <input type = "number" placeholder= '00' min = "0" max = "59" value = {seconds=== 0 ? "": seconds } name = "seconds" onChange = {handleInputSeconds} maxLength = {2} />
-        </form>
-
-
-        <form>
-          <input type = "number"  min = "0" max = "59" placeholder='00' value = {minutes === 0 ? "": minutes } name = "minutes" onChange = {handleInputSeconds} maxLength = {2}  />
-        </form>
-
-
-        <form>
-          <input type = "number"  min = "0" max = "24" placeholder='00' value = {hours === 0 ? "": hours }name = "hours" onChange = {handleInputSeconds} maxLength = {2} />
-        </form> */}
         <span>
-          <button onClick={startCountdown} >Start</button>
-          <button onClick = {resetValues}>Reset</button>
+          {start ? <button disabled = {btn === true || total === 0? true: false} className='start-timer' onClick={startCountdown} >Stop</button>: <button disabled = {btn === true || total === 0? true: false} className='start-timer' onClick={startCountdown} >Start</button>}
+          <button disabled = {start === true || total === 0? true: false} className='reset-timer' onClick = {resetValues}>Reset</button>
         </span>
       
 
