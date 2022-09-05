@@ -1,267 +1,312 @@
 
+ .semi-1{
 
-/* .container{
-    /* background-color: aliceblue; */
-    /* position: absolute;
+    position: absolute;
+    top: 50%;
     left: 50%;
-    top: 50%;
-    transform: translate(-40%, -40%);
+    transform: translate(-50%, 50%);
+    font-size: 40px;
+    font-weight: bold;
 
 }
 
-.seconds-form{
-    background-color: aliceblue;
-    position: relative;
-    left: 190%;
+.semi-2{
+    position: absolute;
     top: 50%;
-    transform: translate(-40%, -350%);
-
-}
-
-
-
-.minutes-form{
-    background-color: aliceblue;
-    position: relative;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -450%);
-
+    transform: translate(-50%, 50%);
+    font-size: 40px;
+    font-weight: bold;
 
 }
 
 
-.hours-form{
-    background-color: aliceblue;
-    position: relative;
-    left: -90%;
+.start-timer{
+    position: absolute;
     top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border: none;
+    background-color: whitesmoke;
     border-radius: 20px;
-    border: 2px solid black;
-    transform: translate(-50%, -550%); */
-/* }  */
+    box-shadow: 0 1.5px #999;
+    height: 40px;
+    width: 60px;
+}
 
-@media (max-width: 600px){
+.start-timer:active{
+    background-color: purple;
+}
+
+.reset-timer{
+    position: absolute;
+    align-items: center;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 60px;
+    top: 50%;
+    left: 50%;
+    justify-content: center;
+    transform: translate(-50%, 50%);
+    box-shadow: 0 1.5px #999;
+}
+
+.reset-timer:active{
+    background-color: purple;
+
+}
+
+
+.container{
+    /* background-color: aliceblue; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+    
+
+
+
+.title-inp{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.select-inp{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 5;
+
+}
+
+
+.inp-seconds{
+    text-align: center;
+    font-size: large;
+    border: 2px solid black;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.inp-minutes{
+    text-align: center;
+    font-size: large;
+    border-radius: 10px;
+    border: 2px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.inp-hours{
+    text-align: center;
+    font-size: large;
+    border-radius: 10px;
+    border: 2px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+
+
+
+
+
+
+/* *
+Seconds buttons
+*/
+
+ /* .add-seconds{
+  display: none;
+}
+.minus-seconds{
+    display: none;
+ }
+
+  /**
+Minutes buttons
+*/
+
+/* .add-minutes{
+    display: none;
+ }
+.minus-minutes{
+    display: none;
+} 
+
+/* 
+Hours buttons
+*/
+
+/* .add-hours{
+    display: none;
+ }
+
+.minus-hours{
+    display: none;
+}   */ 
+
+
+
+
+/* 
+
+Input stuff
+*/ 
+
+/* .inp-seconds{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.inp-minutes{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.inp-hours{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+} */
+
+
+
+/* 
+
+
+
+*/
+
+
+@media (max-width: 500px){
 
 
 
     .semi-1{
-
-        position: absolute;
         transform: translate(1100%, -330%);
-        height: 20px;
-        font-size: 40px;
-        font-weight: bold;
 
     }
 
     .semi-2{
-        /* background-color: wheat; */
-        position: absolute;
         transform: translate(320%, -530%);
-        height: 20px;
-        font-size: 40px;
-        font-weight: bold;
 
     }
 
 
     .start-timer{
-        position: absolute;
-        transform: translate(50%, 30%);
-        border: 2px solid black;
-        background-color: whitesmoke;
-        border-radius: 20px;
-        height: 40px;
-        width: 60px;
-        box-shadow: 0 1.5px #999;
+      
+        transform: translate(50%, 0%);
     }
 
-    .start-timer:active{
-        position: absolute;
-        transform: translate(50%, 30%);
-        border: 2px solid black;
-        border-radius: 20px;
-        height: 40px;
-        width: 60px;
-        background-color: purple;
-    }
+    
+
 
     .reset-timer{
-        position: absolute;
-        align-items: center;
-        background-color: whitesmoke;
-        border: 2px solid black;
-        border-radius: 20px;
-        height: 40px;
-        width: 60px;
-        justify-content: center;
-        transform: translate(180%, 30%);
-        box-shadow: 0 1.5px #999;
+        transform: translate(180%, 0%);
     }
 
-    .reset-timer:active{
-        position: absolute;
-        align-items: center;
-        background-color: purple;
-        border: 2px solid black;
-        border-radius: 20px;
-        height: 40px;
-        width: 60px;
-        justify-content: center;
-        transform: translate(180%, 30%);
-    }
+    
     
 
     .container{
-        /* background-color: aliceblue; */
-        position: absolute;
-        left: 50%;
-        top: 50%;
         transform: translate(-50%, -50%);
 
     }
         
-    /* .seconds-form{
-        /* background-color: aliceblue; */
-        /* position: relative;
-        left: 190%;
-        top: 50%;
-        width: 45px;
-        transform: translate(-500%, -20%);
-    
-    } */
-    
-    
-    
-    /* .minutes-form{
-        /* background-color: aliceblue; */
-        /* position: relative;
-        text-align: center;
-        width: 45px;
-        border: 2px;
-        border-color: black;
-        left: 50%;
-        top: 50%;
-        transform: translate(-73%, -120%);
-    
-    
-    } */
-    
-    
-    /* .hours-form{ */
-        /* visibility: hidden; */
-        /* background-color: aliceblue; */
-        /* position: relative;
-        text-align: center;
-        width: 45px;
-        border: 2px;
-        border: 1px solid black;
-        left: -20%;
-        top: 50%;
-        transform: translate(40%, -219%);
-    } */ 
-
+   
 
 
     .title-inp{
-        position: absolute;
         transform: translate(-11%, 0%);
-        border: 1px solid black;
-        text-align: center;
-        border-radius: 10px;
-        font-size: 20px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        height: 30px;
-        top:20%;
-        width: 200px; 
-        margin: 20px;
     }
 
 
     .select-inp{
-        position: absolute;
-        height: 20px;
         transform: translate(0%, -150%);
-        font-size: 20px;
-        width: 200px;
-        z-index: 5;
 
     }
 
 
     .inp-seconds{
-        text-align: center;
-        font-size: large;
-        width: 60px;
-        height: 40px;
-        border: 2px solid black;
-        border-radius: 10px;
-        transform: translate(270%, -50%);
+        position: relative;
+        height: 5vh;
+        width: 30%;
+        transform: translate(120%, -50%);
     }
     
     .inp-minutes{
-        text-align: center;
-        font-size: large;
-        width: 60px;
-        height: 40px;
-        border-radius: 10px;
-        border: 2px solid black;
-        transform: translate(108%, -150%);
+        position: relative;
+        height: 5vh;
+        width: 30%;
+        transform: translate(-50%, -150%);
     }
     
     .inp-hours{
-        text-align: center;
-        font-size: large;
-        width: 60px;
-        height: 40px;
-        border-radius: 10px;
-        border: 2px solid black;
-        transform: translate(-55%, -250%);
+        position: relative;
+        height: 5vh;
+        width: 30%;
+        transform: translate(-220%, -250%);
+    }
+    .semi-1{
+        height: 5vh;
+        width: 20%;
+        transform: translate(125%, -270%);
+    
+    }
+
+    .semi-2{
+        height: 5vh;
+        width: 20%;
+        transform: translate(-170%, -270%);
+    
     }
 
 
 
-    /* *
-    Seconds buttons
-    */
-
-     .add-seconds{
-      display: none;
+    .title-inp{
+        transform: translate(-50%, -150%);
+        height: 4vh;
+        width: 100%;
     }
-    .minus-seconds{
-        display: none;
-     }
 
-      /**
-    Minutes buttons
-    */
-
-    .add-minutes{
-        display: none;
-     }
-    .minus-minutes{
-        display: none;
-    } 
-
-/* 
-    Hours buttons
-    */
-
-    .add-hours{
-        display: none;
-     }
-
-    .minus-hours{
-        display: none;
-    }  
- 
- 
+    .select-inp{
+        transform: translate(-50%, -170%);
+        width: 100%;
+        height: 4vh;
 
 
+    
+    }
 
+    .start-timer{
 
+        transform: translate(-110%, 130%);
+    }
+    .reset-timer{
 
+        transform: translate(10%, 130%);
+    }
 
 }
 
@@ -269,29 +314,419 @@
 
 
 
+@media(max-width: 350px) {
+    
 
-/**
-
-Input stuff
+/* *
+Seconds buttons
 */
 
-.inp-seconds{
-    width: 60px;
-    height: 40px;
-    border: 2px;
-    border-color: black;
-}
+ .add-seconds{
+    display: none;
+  }
+  .minus-seconds{
+      display: none;
+   }
+  
+    /**
+  Minutes buttons
+  */
+  
+  .add-minutes{
+      display: none;
+   }
+  .minus-minutes{
+      display: none;
+  } 
+  
+  /* 
+  Hours buttons
+  */
+  
+  .add-hours{
+      display: none;
+   }
+  
+  .minus-hours{
+      display: none;
+  }  
+  
+    
 
-.inp-minutes{
-    width: 60px;
-    height: 40px;
-    border: 2px;
-    border-color: black;
-}
+    .semi-1{
+        height: 5vh;
+        width: 20%;
+        transform: translate(125%, -300%);
+    
+    }
 
-.inp-hours{
-    width: 60px;
+    .semi-2{
+        height: 5vh;
+        width: 20%;
+        transform: translate(-170%, -300%);
+    
+    }
+
+
+    .start-timer{
+        transform: translate(-50%, 50%);
+    }
+
+
+    .title-inp{
+        transform: translate(-50%, -150%);
+        height: 4vh;
+        width: 120%;
+    }
+
+    .select-inp{
+        transform: translate(-50%, -170%);
+        width: 120%;
+        height: 4vh;
+
+
+    
+    }
+
+    .start-timer{
+
+        transform: translate(-110%, 120%);
+    }
+    .reset-timer{
+
+        transform: translate(10%, 120%);
+    }
+
+}
+    
+
+
+/* 
+For older phones ex iphone 4
+
+ */
+
+
+ 
+
+ @media(max-height: 500px){
+    
+
+/* *
+Seconds buttons
+*/
+
+ .add-seconds{
+    display: none;
+  }
+  .minus-seconds{
+      display: none;
+   }
+  
+    /**
+  Minutes buttons
+  */
+  
+  .add-minutes{
+      display: none;
+   }
+  .minus-minutes{
+      display: none;
+  } 
+  
+  /* 
+  Hours buttons
+  */
+  
+  .add-hours{
+      display: none;
+   }
+  
+  .minus-hours{
+      display: none;
+  }  
+  
+
+    
+    .semi-1{
+        transform: translate(-180%, -340%);
+
+    }
+
+    .semi-2{
+        transform: translate(130%, -340%);
+
+    }
+
+
+    .inp-seconds{
+        height: 6vh;
+        transform: translate(120%, -80%);
+    }
+    
+    .inp-minutes{
+        height: 6vh;
+        transform: translate(-50%, -180%); 
+    }
+    
+    .inp-hours{
+        height: 6vh;
+        transform: translate(-220%, -280%); 
+    }
+    .semi-1{
+        height: 5vh;
+        width: 20%;
+        transform: translate(-170%, -420%);
+    
+    }
+
+    .semi-2{
+        height: 5vh;
+        width: 20%;
+        transform: translate(130%, -420%);
+    
+    }
+
+
+
+    .title-inp{
+        transform: translate(-50%, -130%);
+        height: 5vh;
+        width: 100%;
+    }
+
+    .select-inp{
+        width: 150%;
+        height: 2vh;
+
+        transform: translate(-50%, -470%);
+
+    
+    }
+
+    .start-timer{
+
+        transform: translate(-110%, 150%);
+    }
+    .reset-timer{
+
+        transform: translate(10%, 150%);
+    }
+
+ }
+
+
+
+ 
+
+
+ @media screen and (min-width:700px) and (max-width:1000px){
+    .semi-1{
+        transform: translate(-180%, -340%);
+
+    }
+
+    .semi-2{
+        transform: translate(130%, -340%);
+
+    }
+
+
+    .inp-seconds{
+        height: 5vh;
+        width: 10vh;
+        transform: translate(230%, -30%); 
+    }
+    
+    .inp-minutes{
+        width: 10vh;
+        height: 5vh;
+        transform: translate(15%, -195%); 
+    }
+    
+    .inp-hours{
+        height: 5vh;
+        width: 10vh;
+        transform: translate(-200%, -365%); 
+    }
+    .semi-1{
+        font-size: 5vh;
+        transform: translate(-750%, -230%);
+    
+    }
+
+    .semi-2{
+        font-size: 5vh;
+        transform: translate(600%, -230%);
+    
+    }
+
+
+
+    .title-inp{
+        transform: translate(-50%, -80%);
+        height: 4vh;
+        width: 200%;
+    }
+
+    .select-inp{
+        width: 150%;
+        height: 2vh;
+
+        transform: translate(-50%, -400%);
+
+    
+    }
+
+    .start-timer{
+        height: 6vh;
+        width: 7vh;
+
+        transform: translate(-110%,170%);
+    }
+    .reset-timer{
+        height: 6vh;
+        width: 7vh;
+
+        transform: translate(10%, 170%);
+    }
+
+    
+
+/* *
+Seconds buttons
+*/
+
+ .add-seconds{
+    top: 50%;
+    left: 50%;
+    transform: translate(170%, -70%);
+   
+  }
+
+
+  .add-seconds1{
     height: 40px;
-    border: 2px;
-    border-color: black;
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 20px;
+   
+  }
+  .minus-seconds1{
+    height: 40px;
+    width: 50px;
+    border-radius: 20px;
+    
+     
+   }
+
+
+   .add-seconds1:active{
+    background-color: blue;
+   
+  }
+  .minus-seconds1:active{
+    background-color: blue;
+
+     
+   }
+  
+    /**
+  Minutes buttons
+  */
+  
+  .add-minutes{
+    top: 50%;
+    left: 50%;
+    transform: translate(10%, -310%);
+     
+   }
+
+
+   .add-minutes1{
+    height: 40px;
+    width: 50px;
+    margin-right: 10px; 
+    border-radius: 20px;
+
+   }
+
+
+  .minus-minutes1{
+    height: 40px;
+    width: 50px;
+    border-radius: 20px;
+
+      
+  } 
+
+
+  
+  .add-minutes1:active{
+    background-color: blue;
+   
+  }
+  .minus-minutes1:active{
+    background-color: blue;
+
+     
+   }
+  
+  /* 
+  Hours buttons
+  */
+  
+  .add-hours{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-200%, -650%);
+   
+   }
+
+
+
+   .add-hours1{
+    position: absolute;
+    height: 35px;
+    width: 40px;
+    /* margin-right: 10px;  */
+    border-radius: 20px;
+
+   }
+
+
+  .minus-hours1{
+    height: 35px;
+    width: 40px;
+    border-radius: 20px;
+
+      
+  } 
+
+
+
+  .add-hours1:active{
+    background-color: blue;
+   
+  }
+  .minus-hours1:active{
+    background-color: blue;
+
+     
+   }
+/*   
+  .minus-hours{
+    top: 50%;
+    left: 50%;
+    transform: translate(-790%, -820%);
+    
+  }   */
+  
+  
+
+
+
+    
 }

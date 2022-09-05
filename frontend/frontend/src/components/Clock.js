@@ -103,11 +103,13 @@ const Clock = () => {
 
   return (
     <div>
+      <div className='title1'>
+        <h1  >{title}</h1>
 
-      <h1 className='title'>{title}</h1>
+      </div>
 
 
-
+      <div className = "image-box">
       {Images && (Images.map(ele => {
         if(ele.label === image){
           if(ele.value === ""){
@@ -119,6 +121,8 @@ const Clock = () => {
       }))
       
       }
+
+      </div>
 
       {renderTimer && 
       <div className = "open-timer"> 
@@ -176,12 +180,12 @@ const Clock = () => {
       }
         <div >
 
-        <span >
+        <div >
           {start ? <button className='start-clock' disabled = {btn === true || total === 0? true: false} onClick={startCountdown} >Stop</button>: <button className='start-clock' disabled = {btn === true || total === 0 ? true: false} onClick={startCountdown} >Start</button>}
-        </span>
-        <span>
+        </div>
+        <div>
             <button disabled = {start === true || total === 0? true: false} className = 'reset-clock' onClick = {resetValues}>Reset</button>
-        </span>
+        </div>
 
         </div>
 

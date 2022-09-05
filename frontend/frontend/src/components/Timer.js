@@ -158,7 +158,7 @@ const Timer = (props) => {
 
     function longhPressStart(e){
       const nameVal = e.target.name
-      // console.log(nameVal)
+      console.log(nameVal)
 
 
       var timer = 0
@@ -345,11 +345,13 @@ const Timer = (props) => {
 
     function longPressStop(){
       // setPress("")
-      // console.log("jjje")
+      console.log("jjje")
       clearInterval(timerRef.current)
       clearInterval(longPressInit.current)
 
     }
+
+    console.log(press)
 
 
 
@@ -419,6 +421,9 @@ const Timer = (props) => {
 
       }, 40)
     }
+
+
+  
 
 
     useEffect(() => {
@@ -525,8 +530,11 @@ const Timer = (props) => {
 
         <div className='seconds-form'>
         <form>
-        <button className='add-seconds' disabled = {start == true ? true: false || seconds === 59? true: false} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick = {handleAddSeconds} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} onMouseOver = {mouseOver} value = {seconds} name = "secondsAdd">+</button>
-          <button className='minus-seconds' disabled = {start == true ? true: false || seconds === 0? true: false} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick = {handleMinusSeconds} onMouseOut = {hoverPress} onMouseUp = {longPressStop} onMouseOver = {mouseOver} onMouseDown = {longhPressStart} value = {seconds} name = "secondsMinus" >-</button>
+          <div className='add-seconds'>
+
+          <button className='add-seconds1' disabled = {start == true ? true: false || seconds === 59? true: false} onTouchMove = {hoverPress} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick = {handleAddSeconds} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} onMouseOver = {mouseOver} value = {seconds} name = "secondsAdd">+</button>
+          <button  className='minus-seconds1' disabled = {start == true ? true: false || seconds === 0? true: false} onTouchMove = {hoverPress} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick = {handleMinusSeconds} onMouseUp = {longPressStop} onMouseOver = {mouseOver} onMouseDown = {longhPressStart} value = {seconds} name = "secondsMinus" >-</button>
+          </div>
           
           <input disabled= {start ? true: false} className = 'inp-seconds' type = "text" placeholder= '00' min = "00" max = "59" value = {seconds=== 0 ? "": seconds } name = "seconds" onChange = {handleInputSeconds} maxLength = {2} />
         </form>
@@ -540,8 +548,12 @@ const Timer = (props) => {
 
         <div className='minutes-form'>
         <form>
-          <button className='add-minutes' disabled = {start == true ? true: false || minutes === 59? true: false} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onMouseOut = {hoverPress} onClick={handleAddMinutes} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} value = {minutes} onMouseOver = {mouseOver} name = "minutesAdd">+</button>
-          <button className='minus-minutes' disabled = {start == true ? true: false || minutes === 0? true: false} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onMouseOut = {hoverPress} onClick={handleMinusMinutes} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} value = {minutes} onMouseOver = {mouseOver} name = "minutesMinus">-</button>
+          <div className='add-minutes'>
+
+          <button className='add-minutes1' disabled = {start == true ? true: false || minutes === 59? true: false} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onMouseOut = {hoverPress} onClick={handleAddMinutes} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} value = {minutes} onMouseOver = {mouseOver} name = "minutesAdd">+</button>
+          <button className='minus-minutes1' disabled = {start == true ? true: false || minutes === 0? true: false} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onMouseOut = {hoverPress} onClick={handleMinusMinutes} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} value = {minutes} onMouseOver = {mouseOver} name = "minutesMinus">-</button>
+
+          </div>
           <input  disabled= {start ? true: false} className = 'inp-minutes' type = "text"  min = "0" max = "59" placeholder='00' value = {minutes === 0 ? "": minutes } name = "minutes" onChange = {handleInputSeconds} maxLength = {2}  />
         </form>  
         </div>
@@ -551,8 +563,12 @@ const Timer = (props) => {
 
       <div className='hours-form'>
       <form>
-          <button className='add-hours' disabled = {start == true ? true: false || hours === 24? true: false}  onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick={handleAddHours} onMouseOut = {hoverPress} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} onMouseOver = {mouseOver} value = {hours} name = "hoursAdd">+</button>
-          <button className='minus-hours' disabled = {start == true ? true: false || hours === 0? true: false} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick={handleMinusHours} onMouseOut = {hoverPress} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} onMouseOver = {mouseOver} value = {hours} name = "hoursMinus">-</button>
+        <div className='add-hours'>
+        <button className='add-hours1' disabled = {start == true ? true: false || hours === 24? true: false}  onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick={handleAddHours} onMouseOut = {hoverPress} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} onMouseOver = {mouseOver} value = {hours} name = "hoursAdd">+</button>
+          <button className='minus-hours1'  disabled = {start == true ? true: false || hours === 0? true: false} onTouchStart = {longhPressStart} onTouchEnd = {longPressStop} onClick={handleMinusHours} onMouseOut = {hoverPress} onMouseUp = {longPressStop} onMouseDown = {longhPressStart} onMouseOver = {mouseOver} value = {hours} name = "hoursMinus">-</button>
+
+        </div>
+  
           
           <input disabled= {start ? true: false}  className = 'inp-hours' type = "text"  min = "0" max = "24" placeholder='00' value = {hours === 0 ? "": hours }name = "hours" onChange = {handleInputSeconds} maxLength = {2} />
         </form>
