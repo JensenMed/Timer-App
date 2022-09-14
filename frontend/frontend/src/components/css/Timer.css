@@ -307,6 +307,41 @@ Input stuff
 
         transform: translate(10%, 130%);
     }
+    
+
+    /* * *
+Seconds buttons
+*/ 
+
+ .add-seconds{
+    display: none;
+  }
+  .minus-seconds{
+      display: none;
+   }
+  
+    /**
+  Minutes buttons
+  */
+  
+  .add-minutes{
+      display: none;
+   }
+  .minus-minutes{
+      display: none;
+  } 
+  
+  /* 
+  Hours buttons
+  */
+  
+  .add-hours{
+      display: none;
+   }
+  
+  .minus-hours{
+      display: none;
+  }  
 
 }
 
@@ -521,13 +556,10 @@ Seconds buttons
 
 
  @media screen and (min-width:700px) and (max-width:1000px){
-    .semi-1{
-        transform: translate(-180%, -340%);
 
-    }
 
-    .semi-2{
-        transform: translate(130%, -340%);
+    .container{
+        transform: translate(-50%, -40%);
 
     }
 
@@ -535,60 +567,67 @@ Seconds buttons
     .inp-seconds{
         height: 5vh;
         width: 10vh;
-        transform: translate(230%, -30%); 
+        transform: translate(210%, -85%); 
     }
     
     .inp-minutes{
         width: 10vh;
         height: 5vh;
-        transform: translate(15%, -195%); 
+        transform: translate(1%, -185%); 
     }
     
     .inp-hours{
         height: 5vh;
         width: 10vh;
-        transform: translate(-200%, -365%); 
+        transform: translate(-200%, -285%); 
     }
     .semi-1{
+        margin: 20%;
+        left: 0%;
+        top: 0%;
         font-size: 5vh;
-        transform: translate(-750%, -230%);
+        transform: translate(-570%, -135%);
     
     }
 
     .semi-2{
+        margin: 20%;
+        left: 0%;
+        top: 0%;
         font-size: 5vh;
-        transform: translate(600%, -230%);
+        transform: translate(770%, -135%);
     
     }
 
 
 
     .title-inp{
-        transform: translate(-50%, -80%);
+        transform: translate(-50%, -120%);
         height: 4vh;
         width: 200%;
     }
 
     .select-inp{
-        width: 150%;
-        height: 2vh;
+        position: absolute;
+        width: 250%;
+        height: 40px;
 
-        transform: translate(-50%, -400%);
+        transform: translate(-50%, -90%);
 
     
     }
 
     .start-timer{
         height: 6vh;
-        width: 7vh;
+        width: 7.5vh;
 
-        transform: translate(-110%,170%);
+        transform: translate(-120%,170%);
     }
     .reset-timer{
         height: 6vh;
-        width: 7vh;
+        width: 7.5vh;
 
-        transform: translate(10%, 170%);
+        transform: translate(20%, 170%);
     }
 
     
@@ -598,30 +637,31 @@ Seconds buttons
 */
 
  .add-seconds{
-    top: 50%;
-    left: 50%;
-    transform: translate(170%, -70%);
+    /* background-color: beige; */
+    left: 0%;
+    position: absolute;
+    transform: translate(245%, -195%);
    
   }
 
 
   .add-seconds1{
-    height: 40px;
-    width: 50px;
-    margin-right: 10px;
+    height: 3.5vh;
+    width: 4vh;
     border-radius: 20px;
    
   }
   .minus-seconds1{
-    height: 40px;
-    width: 50px;
+    height: 3.5vh;
+    width: 4vh;
+    margin: 10px; 
     border-radius: 20px;
     
      
    }
 
 
-   .add-seconds1:active{
+.add-seconds1:active{
     background-color: blue;
    
   }
@@ -636,26 +676,27 @@ Seconds buttons
   */
   
   .add-minutes{
-    top: 50%;
-    left: 50%;
-    transform: translate(10%, -310%);
+    position: absolute;
+    transform: translate(5%, -305%);
      
    }
 
 
    .add-minutes1{
-    height: 40px;
-    width: 50px;
-    margin-right: 10px; 
+    height: 3.5vh;
+    width: 4vh;
+    margin: 10px; 
     border-radius: 20px;
+    /* transform: translate(50%, -430%); */
 
    }
 
 
   .minus-minutes1{
-    height: 40px;
-    width: 50px;
+    height: 3.5vh;
+    width: 4vh;
     border-radius: 20px;
+    /* transform: translate(60%, -430%); */
 
       
   } 
@@ -677,29 +718,25 @@ Seconds buttons
   */
   
   .add-hours{
-
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-200%, -650%);
-   
-   }
+    /* background-color: beige; */
+    transform: translate(-220%, -410%);
+   } 
 
 
 
    .add-hours1{
-    position: absolute;
-    height: 35px;
-    width: 40px;
-    /* margin-right: 10px;  */
+    height: 3.5vh;
+    width: 4vh;
+    margin: 10px;
     border-radius: 20px;
 
    }
 
 
-  .minus-hours1{
-    height: 35px;
-    width: 40px;
+   .minus-hours1{
+    height: 3.5vh;
+    width: 4vh;
     border-radius: 20px;
 
       
@@ -716,17 +753,783 @@ Seconds buttons
 
      
    }
-/*   
-  .minus-hours{
-    top: 50%;
-    left: 50%;
-    transform: translate(-790%, -820%);
+  
+  
+
+
+
     
-  }   */
+}
+
+
+
+
+@media screen and (min-width:500px) and (max-width:700px){
+
+
+    .container{
+
+        transform: translate(-50%, -40%);
+        
+
+    }
+
+
+    
+    .semi-1{
+        transform: translate(-180%, -340%);
+
+    }
+
+    .semi-2{
+        transform: translate(130%, -340%);
+
+    }
+
+
+    .inp-seconds{
+        height: 5vh;
+        width: 8vh;
+        transform: translate(250%, -85%); 
+    }
+    
+    .inp-minutes{
+        width: 8vh;
+        height: 5vh;
+        transform: translate(55%, -185%); 
+    }
+    
+    .inp-hours{
+        height: 5vh;
+        width: 8vh;
+        transform: translate(-140%, -285%); 
+    }
+    .semi-1{
+        left: 0%;
+        font-size: 5vh;
+        transform: translate(-10%, -260%);
+    
+    }
+
+    .semi-2{
+        left: 0%;
+        font-size: 5vh;
+        transform: translate(1040%, -260%);
+    
+    }
+
+
+
+    .title-inp{
+        transform: translate(-55%, -120%);
+        left: 60%;
+        height: 4vh;
+        width: 250%;
+    }
+
+    .select-inp{
+        width: 150%;
+        height: 2vh;
+        left: 50%;
+
+        transform: translate(-50%, -260%);
+
+    
+    }
+
+    .start-timer{
+        height: 6vh;
+        width: 7.5vh;
+
+        transform: translate(-120%,160%);
+    }
+    .reset-timer{
+        height: 6vh;
+        width: 7.5vh;
+
+        transform: translate(20%, 160%);
+    }
+
+
+
+    /* * *
+Seconds buttons
+/* */ 
+
+ .add-seconds{
+    display: none;
+  }
+  .minus-seconds{
+      display: none;
+   }
   
+    /**
+  Minutes buttons
+  */
   
+  .add-minutes{
+      display: none;
+   }
+  .minus-minutes{
+      display: none;
+  } 
+  
+  /* 
+  Hours buttons
+  */
+  
+  .add-hours{
+      display: none;
+   }
+  
+  .minus-hours{
+      display: none;
+  }  
+
+    
+
+    
+}
+
+
+@media screen and (min-width:1000px) and (max-width:1500px) {
+    
+    .container{
+        transform: translate(-35%, -40%);
+
+    }
+
+
+    .inp-seconds{
+        height: 5vh;
+        width: 10vh;
+        transform: translate(240%, -45%); 
+    }
+    
+    .inp-minutes{
+        width: 10vh;
+        height: 5vh;
+        transform: translate(20%, -145%); 
+    }
+    
+    .inp-hours{
+        height: 5vh;
+        width: 10vh;
+        transform: translate(-200%, -245%); 
+    }
+    .semi-1{
+        margin: 20%;
+        left: 0%;
+        top: 0%;
+        font-size: 5vh;
+        transform: translate(-550%, -117%);
+    
+    }
+
+    .semi-2{
+        margin: 20%;
+        left: 0%;
+        top: 0%;
+        font-size: 5vh;
+        transform: translate(880%, -117%);
+    
+    }
 
 
 
+    .title-inp{
+        left: 0%;
+
+        transform: translate(-35%, -140%);
+        height: 4vh;
+        width: 200%;
+    }
+
+    .select-inp{
+        left: 0%;
+        position: absolute;
+        width: 250%;
+        height: 40px;
+
+        transform: translate(-35%, -90%);
+
+    
+    }
+
+    .start-timer{
+        height: 7vh;
+        width: 8vh;
+
+        transform: translate(-180%,120%);
+    }
+    .reset-timer{
+        height: 7vh;
+        width: 8vh;
+
+        transform: translate(-10%, 120%);
+    }
+
+    
+
+/* *
+Seconds buttons
+*/
+
+ .add-seconds{
+    /* background-color: beige; */
+    left: 0%;
+    position: absolute;
+    transform: translate(210%, -135%);
+   
+  }
+
+
+  .add-seconds1{
+    height: 4vh;
+    width: 5vh;
+    border-radius: 20px;
+   
+  }
+  .minus-seconds1{
+    height: 4vh;
+    width: 5vh;
+    margin: 10px; 
+    border-radius: 20px;
+    
+     
+   }
+
+
+.add-seconds1:active{
+    background-color: blue;
+   
+  }
+  .minus-seconds1:active{
+    background-color: blue;
+
+     
+   }
+  
+    /**
+  Minutes buttons
+  */
+  
+  .add-minutes{
+    position: absolute;
+    transform: translate(10%, -225%);
+     
+   }
+
+
+   .add-minutes1{
+    height: 4vh;
+    width: 5vh;
+    margin: 10px; 
+    border-radius: 20px;
+    /* transform: translate(50%, -430%); */
+
+   }
+
+
+  .minus-minutes1{
+    height: 4vh;
+    width: 5vh;
+    border-radius: 20px;
+    /* transform: translate(60%, -430%); */
+
+      
+  } 
+
+
+  
+  .add-minutes1:active{
+    background-color: blue;
+   
+  }
+  .minus-minutes1:active{
+    background-color: blue;
+
+     
+   }
+  
+  /* 
+  Hours buttons
+  */
+  
+  .add-hours{
+    position: absolute;
+    /* background-color: beige; */
+    transform: translate(-185%, -320%);
+   } 
+
+
+
+   .add-hours1{
+    height: 4vh;
+    width: 5vh;
+    margin: 10px;
+    border-radius: 20px;
+
+   }
+
+
+   .minus-hours1{
+    height: 4vh;
+    width: 5vh;
+    border-radius: 20px;
+
+      
+  } 
+
+
+
+  .add-hours1:active{
+    background-color: blue;
+   
+  }
+  .minus-hours1:active{
+    background-color: blue;
+
+     
+   }
+    
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:1000px) and (max-width:1100px) {
+    
+    .container{
+        transform: translate(-70%, -40%);
+
+    }
+
+
+    .inp-seconds{
+        height: 5vh;
+        width: 10vh;
+        transform: translate(240%, -45%); 
+    }
+    
+    .inp-minutes{
+        width: 10vh;
+        height: 5vh;
+        transform: translate(20%, -145%); 
+    }
+    
+    .inp-hours{
+        height: 5vh;
+        width: 10vh;
+        transform: translate(-200%, -245%); 
+    }
+    .semi-1{
+        margin: 20%;
+        left: 0%;
+        top: 0%;
+        font-size: 5vh;
+        transform: translate(-450%, -90%);
+    
+    }
+
+    .semi-2{
+        margin: 20%;
+        left: 0%;
+        top: 0%;
+        font-size: 5vh;
+        transform: translate(950%, -90%);
+    
+    }
+
+
+
+    .title-inp{
+        left: 40%;
+
+        transform: translate(-35%, -100%);
+        height: 4vh;
+        width: 200%;
+    }
+
+    .select-inp{
+        left: 35%;
+        position: absolute;
+        width: 250%;
+        height: 40px;
+
+        transform: translate(-35%, -90%);
+
+    
+    }
+
+    .start-timer{
+        left: 120%;
+        height: 7vh;
+        width: 8vh;
+
+        transform: translate(-180%,120%);
+    }
+    .reset-timer{
+        left: 100%;
+        height: 7vh;
+        width: 8vh;
+
+        transform: translate(-10%, 120%);
+    }
+
+    
+
+/* *
+Seconds buttons
+*/
+
+ .add-seconds{
+    /* background-color: beige; */
+    left: 0%;
+    position: absolute;
+    transform: translate(275%, -205%);
+   
+  }
+
+
+  .add-seconds1{
+    height: 3vh;
+    width: 4vh;
+    border-radius: 20px;
+   
+  }
+  .minus-seconds1{
+    height: 3vh;
+    width: 4vh;
+    margin: 10px; 
+    border-radius: 20px;
+    
+     
+   }
+
+
+.add-seconds1:active{
+    background-color: blue;
+   
+  }
+  .minus-seconds1:active{
+    background-color: blue;
+
+     
+   }
+  
+    /**
+  Minutes buttons
+  */
+  
+  .add-minutes{
+    position: absolute;
+    transform: translate(20%, -330%);
+     
+   }
+
+
+   .add-minutes1{
+    height: 3vh;
+    width: 4vh;
+    margin: 10px; 
+    border-radius: 20px;
+    /* transform: translate(50%, -430%); */
+
+   }
+
+
+  .minus-minutes1{
+    height: 3vh;
+    width: 4vh;
+    border-radius: 20px;
+    /* transform: translate(60%, -430%); */
+
+      
+  } 
+
+
+  
+  .add-minutes1:active{
+    background-color: blue;
+   
+  }
+  .minus-minutes1:active{
+    background-color: blue;
+
+     
+   }
+  
+  /* 
+  Hours buttons
+  */
+  
+  .add-hours{
+    position: absolute;
+    /* background-color: beige; */
+    transform: translate(-220%, -450%);
+   } 
+
+
+
+   .add-hours1{
+    height: 3vh;
+    width: 4vh;
+    margin: 10px;
+    border-radius: 20px;
+
+   }
+
+
+   .minus-hours1{
+    height: 3vh;
+    width: 4vh;
+    border-radius: 20px;
+
+      
+  } 
+
+
+
+  .add-hours1:active{
+    background-color: blue;
+   
+  }
+  .minus-hours1:active{
+    background-color: blue;
+
+     
+   }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1500px) {
+
+
+    .container{
+        transform: translate(-25%, -40%);
+
+    }
+
+
+    .inp-seconds{
+        left: 0%;
+        height: 5vh;
+        width: 10vh;
+        transform: translate(280%, -45%); 
+    }
+    
+    .inp-minutes{
+        width: 10vh;
+        height: 5vh;
+        transform: translate(-10%, -145%); 
+    }
+    
+    .inp-hours{
+        height: 5vh;
+        width: 10vh;
+        transform: translate(-300%, -245%); 
+    }
+    .semi-1{
+        margin: 20%;
+        left: 0%;
+        top: 0%;
+        font-size: 5vh;
+        transform: translate(-900%, -110%);
+    
+    }
+
+    .semi-2{
+        margin: 20%;
+        left: 0%;
+        top: 0%;
+        font-size: 5vh;
+        transform: translate(900%, -110%);
+    
+    }
+
+
+
+    .title-inp{
+        left: 0%;
+
+        transform: translate(-35%, -80%);
+        height: 4vh;
+        width: 200%;
+    }
+
+    .select-inp{
+        left: 0%;
+        position: absolute;
+        width: 250%;
+        font-size: 2vh;
+
+        transform: translate(-35%, -90%);
+
+    
+    }
+
+    .start-timer{
+        height: 7vh;
+        width: 9vh;
+
+        transform: translate(-150%,120%);
+    }
+    .reset-timer{
+        height: 7vh;
+        width: 9vh;
+
+        transform: translate(-10%, 120%);
+    }
+
+    
+
+/* *
+Seconds buttons
+*/
+
+ .add-seconds{
+    /* background-color: beige; */
+    left: 0%;
+    position: absolute;
+    transform: translate(320%, -205%);
+   
+  }
+
+
+  .add-seconds1{
+    height: 3.5vh;
+    width: 4vh;
+    border-radius: 20px;
+   
+  }
+  .minus-seconds1{
+    height: 3.5vh;
+    width: 4vh;
+    margin: 10px; 
+    border-radius: 20px;
+    
+     
+   }
+
+
+.add-seconds1:active{
+    background-color: blue;
+   
+  }
+  .minus-seconds1:active{
+    background-color: blue;
+
+     
+   }
+  
+    /**
+  Minutes buttons
+  */
+  
+  .add-minutes{
+    position: absolute;
+    transform: translate(-10%, -305%);
+     
+   }
+
+
+   .add-minutes1{
+    height: 3.5vh;
+    width: 4vh;
+    margin: 10px; 
+    border-radius: 20px;
+    /* transform: translate(50%, -430%); */
+
+   }
+
+
+  .minus-minutes1{
+    height: 3.5vh;
+    width: 4vh;
+    border-radius: 20px;
+    /* transform: translate(60%, -430%); */
+
+      
+  } 
+
+
+  
+  .add-minutes1:active{
+    background-color: blue;
+   
+  }
+  .minus-minutes1:active{
+    background-color: blue;
+
+     
+   }
+  
+  /* 
+  Hours buttons
+  */
+  
+  .add-hours{
+    position: absolute;
+    /* background-color: beige; */
+    transform: translate(-335%, -400%);
+   } 
+
+
+
+   .add-hours1{
+    height: 3.5vh;
+    width: 4vh;
+    margin: 10px;
+    border-radius: 20px;
+
+   }
+
+
+   .minus-hours1{
+    height: 3.5vh;
+    width: 4vh;
+    border-radius: 20px;
+
+      
+  } 
+
+
+
+  .add-hours1:active{
+    background-color: blue;
+   
+  }
+  .minus-hours1:active{
+    background-color: blue;
+
+     
+   }
     
 }
