@@ -57,11 +57,54 @@
 }
 
 
-@media screen and (min-width:450px) and (max-width:800px) and (min-height: 320px) and (max-height: 700px){
+
+@media screen and (min-width:1000px){
+
+    .circle{
+        width: 40%;
+        top: 60%;
+        
+    }
+
+}
+
+
+@media screen and (min-width:450px) and (max-width:600px) and (min-height: 320px) and (max-height: 700px){
 
     .circle{
         width: 50%;
         top: 70%;
+        transform: translate(-50%, -50%);
+        
+    }
+}
+
+
+
+
+@media screen and (min-width:605px) and (max-width:900px) and (min-height: 320px) and (max-height: 700px){
+    .circle{
+        width: 40%;
+        top: 70%;
+        transform: translate(-50%, -50%);
+        
+    }
+}    
+
+
+@media screen and (min-width:905px) and (max-width:1100px) and (min-height: 320px) and (max-height: 700px){
+    .circle{
+        width: 40%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
+}
+
+@media screen and (min-width:910px) and (max-width:1100px) and (min-height: 320px) and (max-height: 450px){
+    .circle{
+        width: 30%;
+        top: 60%;
         transform: translate(-50%, -50%);
         
     }

@@ -1,0 +1,9 @@
+body {
+    background-image: url("../images/western.jpg");
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: 220vh 120vh;
+   }
+

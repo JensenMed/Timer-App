@@ -167,7 +167,7 @@ screens larger than 500px but lesss than 1000
         width: 9.3vh;
         margin: 20px;
         top:50%;
-        transform: translate(-80%, 380%);
+        transform: translate(-80%, 385%);
 
     }
     
@@ -236,17 +236,17 @@ weird screen sizes
 
 @media screen and (min-width:1000px) and (max-width:1500px) {
     .start-clock{
-        height: 7vh;
+        height: 7.5vh;
         width: 8vh;
         font-size: 2vh;
-        transform: translate(-110%, 50%);
+        transform: translate(-110%, 190%);
     }
 
     .reset-clock{
-        height: 7vh;
+        height: 7.5vh;
         width: 8vh;
         font-size: 2vh;
-        transform: translate(10%, 50%);
+        transform: translate(10%, 190%);
 
     }
 
@@ -261,7 +261,7 @@ weird screen sizes
         position: relative;
         width: 10vh;
         top:50%;
-        transform: translate(-70%, 345%);
+        transform: translate(-70%, 400%);
 
     }
     
@@ -280,14 +280,14 @@ weird screen sizes
         height: 10vh;
         width: 10.5vh;
         font-size: 2vh;
-        transform: translate(-110%, 50%);
+        transform: translate(-110%,190%);
     }
 
     .reset-clock{
         height: 10vh;
         width: 10.5vh;
         font-size: 2vh;
-        transform: translate(10%, 50%);
+        transform: translate(10%, 190%);
 
     }
 
@@ -320,6 +320,47 @@ weird screen sizes
 
 
 
+
+@media screen and (min-width:1000px) and (max-width:1100px) {
+
+    .start-clock{
+        height: 6.5vh;
+        width: 7vh;
+        font-size: 2vh;
+        transform: translate(-110%, 190%);
+    }
+
+    .reset-clock{
+        height: 6.5vh;
+        width: 7vh;
+        font-size: 2vh;
+        transform: translate(10%, 190%);
+
+    }
+
+    .open-timer{
+        height: 45%;
+        width: 90%;
+        transform: translate(-50%, 5%);
+        z-index: 8;
+
+    }
+
+    .image{
+        position: relative;
+        width: 7.5vh;
+        top:50%;
+        transform: translate(-70%, 640%);
+
+    }
+    
+    .title1{
+        font-size: 3vh;
+        transform: translate(-50%, 10%);
+    }
+
+
+}
 
 
 
@@ -432,20 +473,20 @@ Flipped screens
 
 
 
- @media screen and (min-width:450px) and (max-width:800px) and (min-height: 320px) and (max-height: 700px){
+ @media screen and (min-width:450px) and (max-width:600px) and (min-height: 320px) and (max-height: 700px){
 
     .start-clock{
         height:40px;
         width: 45px;
         font-size: small;
-        transform: translate(-100%, 210%);
+        transform: translate(-100%, 250%);
     }
 
     .reset-clock{
         height:40px;
         width: 45px;
         font-size: small;
-        transform: translate(10%, 210%);
+        transform: translate(10%, 250%);
 
     }
 
@@ -458,8 +499,9 @@ Flipped screens
     }
 
     .image{
-        width: 15%;
-        transform: translate(-50%, -40%);
+        /* display: none; */
+        width: 15vh;
+        transform: translate(-60%, -0%);
 
     }
     
@@ -474,6 +516,20 @@ Flipped screens
 
 
 
+ @media screen and (min-width:500px) and (max-width:600px) and (min-height: 320px) and (max-height: 700px){
+
+
+    .image{
+        /* display: none; */
+        width: 15vh;
+        transform: translate(-90%, 250%);
+
+    }
+    
+
+
+
+ }
 
 
 
@@ -481,6 +537,119 @@ Flipped screens
 
 
 
+ @media screen and (min-width:605px) and (max-width:900px) and (min-height: 320px) and (max-height: 700px){
+    .start-clock{
+        height:40px;
+        width: 45px;
+        font-size: small;
+        transform: translate(-100%, 320%);
+    }
+
+    .reset-clock{
+        height:40px;
+        width: 45px;
+        font-size: small;
+        transform: translate(10%, 320%);
+
+    }
+
+    .open-timer{
+        height: 70%;
+        width: 80%;
+        transform: translate(-50%, 7%);
+        z-index: 9;
+
+    }
+
+    .image{
+        width: 13vh;
+        transform: translate(-80%, 320%);
+
+    }
+    
+    .title1{
+        font-size: 15px;
+        transform: translate(-50%, 10%);
+    }
+ }
+
+ @media screen and (min-width:905px) and (max-width:1100px) and (min-height: 320px) and (max-height: 700px){
+
+    .start-clock{
+        height:40px;
+        width: 45px;
+        font-size: small;
+        transform: translate(-100%, 100%);
+    }
+
+    .reset-clock{
+        height:40px;
+        width: 45px;
+        font-size: small;
+        transform: translate(10%, 100%);
+
+    }
+
+    .open-timer{
+        height: 70%;
+        width: 90%;
+        transform: translate(-50%, 7%);
+        z-index: 9;
+
+    }
+
+    .image{
+        width: 15vh;
+        transform: translate(-80%, 160%);
+
+    }
+    
+    .title1{
+        font-size: 15px;
+        transform: translate(-50%, 10%);
+    }
+ }
+
+
+
+
+
+ @media screen and (min-width:910px) and (max-width:1100px) and (min-height: 320px) and (max-height: 450px){
+
+    .start-clock{
+        height:40px;
+        width: 45px;
+        font-size: small;
+        transform: translate(-100%, 160%);
+    }
+
+    .reset-clock{
+        height:40px;
+        width: 45px;
+        font-size: small;
+        transform: translate(10%, 160%);
+
+    }
+
+    .open-timer{
+        height: 70%;
+        width: 90%;
+        transform: translate(-50%, 7%);
+        z-index: 9;
+
+    }
+
+    .image{
+        width: 15vh;
+        transform: translate(-80%, 190%);
+
+    }
+    
+    .title1{
+        font-size: 15px;
+        transform: translate(-50%, 10%);
+    }
+ }
 /* 
 
 Iphone 12 pro + pixel 5
