@@ -17,6 +17,11 @@ const List = (props) => {
 
   const[over, setOver] = useState(false)
 
+  const[sound, setSound] = useState(<ReactAudioPlayer
+    src= ""
+    autoPlay = {true}
+    />)
+
 
 
     //Seconds data
@@ -39,16 +44,11 @@ const List = (props) => {
     //Hours data
     var hours = props.hours * 3600
     var setHours = props.setHours
-    // console.log(hours)
-    // console.log(seconds)
-    // console.log(minutes)
-
 
 
     //Start data
     const start = props.start
     const setStart = props.setStart
-    // console.log(start)
 
     //Total number of seconds
     var total = props.total
@@ -63,8 +63,14 @@ const List = (props) => {
 
     useEffect(() => {
 
-        setTotal( parseInt(seconds) + parseInt(minutes) + parseInt(hours))
-        // setTotal( seconds + minutes + hours)
+      var totalCalc =  parseInt(seconds) + parseInt(minutes) + parseInt(hours)
+
+      if(totalCalc >= 0){
+        setTotal(totalCalc)
+      }
+      if(totalCalc <= 0){
+        setTotal(0)
+      }
     }, [seconds, minutes, hours])
 
 
@@ -144,18 +150,49 @@ const List = (props) => {
 
 
 
+
+    useEffect(() => {
+
+      if(total === 0 && start === true){
+
+        var counter = 0
+        const mySound = setInterval(() => {
+          counter +=1
+          if(counter <= 10){
+            setSound(<ReactAudioPlayer
+              src= {endSound}
+              autoPlay = {true}
+
+              />)
   
+          }
+          if(counter > 10){
+            setSound(<ReactAudioPlayer
+              src= ""
+              autoPlay = {true}
+              />)
+            clearInterval(mySound)
+          }
+  
+        }, 1000)
+        
+      }
+
+    }, [start, sound, total])
+  
+
+
 
 
 
 
   return (
     <div  className = 'circle'>
-      {total === 0 ? <ReactAudioPlayer
-      src= {endSound}
-      autoPlay = {true}
-      />: ""}
 
+
+       {sound && (<div>{sound}</div>)}
+
+  
 
       
 
@@ -164,13 +201,13 @@ const List = (props) => {
 
         <div onTouchMove={handleMouseOut} onMouseOver = {handleMouseOver} onMouseOut = {handleMouseOut} >
           
-        <CircularProgressbar value={total} maxValue = {start === true ? 100: total} textColor = 'red' text={`${props.hours >= 10 ? props.hours: "0" + props.hours}:${props.minutes >= 10 ? props.minutes: "0" + props.minutes}:${props.seconds >= 10 ? props.seconds:"0" + props.seconds}`} styles={{
+        <CircularProgressbar value={total} maxValue = {start === true ? 100: total} textColor = 'red' text={total > 0 ? `${props.hours >= 10 ? props.hours: "0" + props.hours}:${props.minutes >= 10 ? props.minutes: "0" + props.minutes}:${props.seconds >= 10 ? props.seconds:"0" + props.seconds}`: `${'00:00:00'}`} styles={{
     // Customize the root svg element
     root: {},
     // Customize the path, i.e. the "completed progress"
     path: {
       // Path color
-      stroke: 'purple',
+      stroke: '#582C83',
       // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
       strokeLinecap: 'butt',
       // Customize transition animation
@@ -182,7 +219,7 @@ const List = (props) => {
     // Customize the circle behind the path, i.e. the "total progress"
     trail: {
       // Trail color
-      stroke: 'gray',
+      stroke: '#9259DA',
       // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
       strokeLinecap: 'butt',
       // Rotate the trail
@@ -193,9 +230,10 @@ const List = (props) => {
     text: {
       // textColor: '#f88',
       // Text color
-      fill: `${over===true ? 'blue': 'purple'}`,
+      fill:  '#9259DA',
       // Text size
-      fontSize: '16px',
+      fontSize: '20px',
+      fontWeight: 'bold',
     },
     // Customize background - only used when the `background` prop is true
     background: {
@@ -214,18 +252,3 @@ const List = (props) => {
 
 export default List
 
-
-
-
-
-// <CountdownCircleTimer
-// duration= {total}
-// colors={['#004777', '#F7B801', '#A30000', '#A30000']}
-// colorsTime={[(total), total - (total * 0.25), total - (total * 0.50), total - total ]}
-// >
-// {({ remainingTime }) => {
-//     // return remainingTime
-
-// return `${props.hours >= 10 ? props.hours: "0" + props.hours}:${props.minutes >= 10 ? props.minutes: "0" + props.minutes}:${props.seconds >= 10 ? props.seconds:"0" + props.seconds}`
-// }}
-// </CountdownCircleTimer>

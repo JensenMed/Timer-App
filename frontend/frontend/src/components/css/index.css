@@ -1,9 +1,18 @@
 body {
-    background-image: url("../images/western.jpg");
-    background-color: #cccccc;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    background-size: 220vh 120vh;
+    background: url('../images/western4.png') no-repeat center fixed;     
+    background-size: cover;
    }
 
+
+
+@media screen and (max-width: 500px) {
+
+    body {
+        /* height: 100px; */
+        background: url('../images/mdW.png') no-repeat center fixed;
+        background-size: cover;
+        background-size: 70vh 105vh;
+        background-position: 50% -5vh;
+       } 
+    
+}

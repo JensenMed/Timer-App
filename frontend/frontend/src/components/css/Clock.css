@@ -1,5 +1,11 @@
 
 
+/* 
+            This file will take care of the main Clock screen CSS
+ */
+
+
+
 .start-clock{
     position: absolute;
     left: 50%;
@@ -11,11 +17,10 @@
     width: 60px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bolder;
-    /* font-size-adjust: inherit; */
     text-align: center;
     border: none;
     border-radius: 50%;
-    background-color: red;
+    background-color:#9259DA;
     box-shadow: 0 2px #999;
 
 }
@@ -27,7 +32,7 @@
 
 .open-timer{
    
-    background-color: red;
+    background-color: gray;
     border: 2px solid white;
     border-radius: 20px;
     position: absolute;
@@ -53,7 +58,7 @@
     font-weight: bolder;
     transform: translate(50%, -50%);
     border: none;
-    background-color: red;
+    background-color: #9259DA;
     box-shadow: 0 2px #999;
     border-radius: 50%;
     z-index: 2;
@@ -370,16 +375,6 @@ weird screen sizes
 
 
 
-/* 
-
-have one for under 350
- */
-
-
-
-
-
-
 @media(max-width: 350px){
     .start-clock{
         height:40px;
@@ -650,163 +645,3 @@ Flipped screens
         transform: translate(-50%, 10%);
     }
  }
-/* 
-
-Iphone 12 pro + pixel 5
-
- */
-
-
-/* @media(max-width: 395px){
-
-    .open-timer{
-        transform: translate(-50%, -45%);
-    }
-
-        
-    .start-clock{
-        transform: translate(-110%, -310%);
-
-    }
-
-    .image{
-        transform: translate(160%, 280%);
-    }
-
-
-        
-    .reset-clock{
-        transform: translate(10%, -310%);
-    }
-
-
-
-} */
-
-
-/* 
-Iphone SE
- */
-
-/* @media(max-width: 375px){
-
-    .open-timer{
-        transform: translate(-50%, -32%);
-    
-    }
-
-        
-    .start-clock{
-        transform: translate(-100%, -180%);
-
-    }
-   
-
-    .image{
-        transform: translate(150%, 225%);
-    }
-
-
-        
-    .reset-clock{
-        transform: translate(5%, -180%);
-
-    }
-
-
-} */
-
-
-
-/* 
-
-Galaxy 8+ 
-
- */
-
- /* @media(max-width: 360px){
- .open-timer{
-    transform: translate(-50%, -45%);
-
-}
-
-    
-.start-clock{
-    transform: translate(-100%, -265%);
-
-}
-
-
-.image{
-    transform: translate(140%, 243%);
-}
-
-
-    
-.reset-clock{
-    transform: translate(5%, -265%);
-
-}
-
-
-} */
-
-
-/* 
-S20 ultra and iphone xr
-
- */
-
-
-/* @media(min-width: 412px){
-
-    .open-timer{
-        transform: translate(-50%, -48%);
-    }
-
-        
-    .start-clock{
-        transform: translate(-100%, -355%);
-
-    }
-
-    .image{
-        transform: translate(170%, 295%);
-    }
-
-
-        
-    .reset-clock{
-        transform: translate(10%, -355%);
-    }
-
-
-
-} */
-
-
-/* @media(max-width: 350px){
-    .open-timer{
-        transform: translate(-50%, -48%);
-    }
-
-        
-    .start-clock{
-        transform: translate(-95%, -160%);
-
-    }
-
-    .image{
-        transform: translate(120%, 185%);
-
-    }
-
-
-        
-    .reset-clock{
-        transform: translate(10%, -160%);
-    }
-
-
-
-} */

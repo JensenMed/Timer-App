@@ -1,4 +1,10 @@
 
+
+
+
+//This file takes care of the pop up timer and input details
+
+
 import React, {useEffect, useState, useRef, useMemo} from 'react'
 import './css/Timer.css'
 import Select from 'react-select'
@@ -6,6 +12,11 @@ import sounds from './sounds/sounds'
 
 
 const Timer = (props) => {
+
+
+
+
+    // Parent props passsed
 
 
     const btn = props.btn
@@ -24,29 +35,12 @@ const Timer = (props) => {
     const setTitle = props.setTitle
     const total = props.total
     const setTotal = props.setTotal
-
     const endSound = props.endSound
     const setEndSound = props.setEndSound
-
     const renderTimer = props.renderTimer
     const setRenderTimer = props.setRenderTimer
     const image = props.image
     const setImage = props.setImage
-
-
-
-
-    // const[disabledsec, setDisabledSec] = useState(false)
-
-
-    // const[press, setPress] = useState("")
-    // const { getByText } = render(Clock);
-    // expect(getByText(/Click me/i).closest('button')).toHaveAttribute('disabled');
-    // console.log(press)
-
-
-    // const[start, setStart] = useState(false)
-
     const timerRef = useRef()
     const longPressInit = useRef()
  
@@ -156,6 +150,9 @@ const Timer = (props) => {
 
 
 
+    //handles click of longpress --> then passes to startLongPress
+
+
     function longhPressStart(e){
       const nameVal = e.target.name
       console.log(nameVal)
@@ -238,6 +235,11 @@ const Timer = (props) => {
 
 
 
+
+
+    //Function handles if mouse over button inputs
+
+
     function mouseOver(e){
         let nameVal = e.target.name
   
@@ -302,49 +304,19 @@ const Timer = (props) => {
   
   
   
-  
-  
-  
         e.preventDefault()
   
   
       }
-  
-
-
-
-    // useEffect(() =>{
-    //     if(start === true){
-
-    //       let count = 0
-    //       const myTimer = setInterval(() => {
-    //         count +=1
-    //         if(count === 12){
-    //           setBtn(false)
-    //           clearInterval(myTimer)
-    
-    //         }
-    //         if(count < 12){
-    //           setBtn(true)
-    
-    //         }
-            
-    //       }, 250);
-  
-
-    //     }
-
-
-    // },[start])
 
 
 
 
 
 
+      // Handles long press up
 
     function longPressStop(){
-      // setPress("")
       console.log("jjje")
       clearInterval(timerRef.current)
       clearInterval(longPressInit.current)
@@ -356,7 +328,7 @@ const Timer = (props) => {
 
 
 
-
+    //Long press function
 
     function startLongPress(){
       timerRef.current = setInterval(() =>{
@@ -426,6 +398,9 @@ const Timer = (props) => {
   
 
 
+
+    //Handles timer boundaries
+
     useEffect(() => {
 
       if( seconds > 59){
@@ -467,11 +442,15 @@ const Timer = (props) => {
 
     }, [seconds, minutes, hours])
 
+
+
+
+
+    //Functikon that  handles input seconds
   
 
     function handleInputSeconds(e){
       const name = e.target.name
-      // console.log(e.target.value)
 
       if(name === "seconds"){
         if(e.target.value === "" || isNaN(e.target.value)){
@@ -499,6 +478,8 @@ const Timer = (props) => {
 
 
 
+    // Function hanles reset button
+
     function resetValues(){
       setSeconds(0)
       setMinutes(0)
@@ -506,12 +487,18 @@ const Timer = (props) => {
       setStart(false)
     }
 
+
+    //function hanles Title input
+
     function handleTitle(e){
       setTitle(e.target.value)
       e.preventDefault()
     }
 
 
+
+
+    //Function handles sound input
 
     function handleSound(e){
       sounds.map(sound => {

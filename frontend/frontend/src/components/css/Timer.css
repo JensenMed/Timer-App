@@ -32,10 +32,12 @@
     box-shadow: 0 1.5px #999;
     height: 40px;
     width: 60px;
+    font-weight: 1000;
+    font-size: 15px;
 }
 
 .start-timer:active{
-    background-color: purple;
+    background-color: #9259DA;
 }
 
 .reset-timer{
@@ -51,10 +53,12 @@
     justify-content: center;
     transform: translate(-50%, 50%);
     box-shadow: 0 1.5px #999;
+    font-weight: 1000;
+    font-size: 15px;
 }
 
 .reset-timer:active{
-    background-color: purple;
+    background-color: #9259DA;
 
 }
 
@@ -90,11 +94,14 @@
     left: 50%;
     transform: translate(-50%, 50%);
     z-index: 5;
+    text-align: center;
+    font-weight: 1000;
 
 }
 
 
 .inp-seconds{
+    font-weight: 1000;
     text-align: center;
     font-size: large;
     border: 2px solid black;
@@ -106,6 +113,7 @@
 
 .inp-minutes{
     text-align: center;
+    font-weight: 1000;
     font-size: large;
     border-radius: 10px;
     border: 2px solid black;
@@ -115,6 +123,7 @@
 }
 
 .inp-hours{
+    font-weight: 1000;
     text-align: center;
     font-size: large;
     border-radius: 10px;
@@ -130,73 +139,140 @@
 
 
 
-/* *
+* *
 Seconds buttons
 */
 
- /* .add-seconds{
-  display: none;
-}
-.minus-seconds{
-    display: none;
- }
-
-  /**
-Minutes buttons
-*/
-
-/* .add-minutes{
-    display: none;
- }
-.minus-minutes{
-    display: none;
-} 
-
-/* 
-Hours buttons
-*/
-
-/* .add-hours{
-    display: none;
- }
-
-.minus-hours{
-    display: none;
-}   */ 
+ .add-seconds{
+    /* background-color: beige; */
+    left: 0%;
+    position: absolute;
+    transform: translate(245%, -195%);
+   
+  }
 
 
+  .add-seconds1{
+    height: 3.5vh;
+    width: 4vh;
+    border-radius: 20px;
+    border: none;
+    font-weight: 1000;
+   
+  }
+  .minus-seconds1{
+    height: 3.5vh;
+    width: 4vh;
+    margin: 10px; 
+    border-radius: 20px;
+    border: none;
+    font-weight: 1000;
+    
+     
+   }
 
 
-/* 
+.add-seconds1:active{
+    background-color: #9259DA;
+   
+  }
+  .minus-seconds1:active{
+    background-color: #9259DA;
 
-Input stuff
-*/ 
-
-/* .inp-seconds{
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-}
-
-.inp-minutes{
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-}
-
-.inp-hours{
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-} */
+     
+   }
+  
+    /**
+  Minutes buttons
+  */
+  
+  .add-minutes{
+    position: absolute;
+    transform: translate(5%, -305%);
+     
+   }
 
 
+   .add-minutes1{
+    height: 3.5vh;
+    width: 4vh;
+    margin: 10px; 
+    border-radius: 20px;
+    border: none;
+    font-weight: 1000;
+    /* transform: translate(50%, -430%); */
 
-/* 
+   }
+
+
+  .minus-minutes1{
+    height: 3.5vh;
+    width: 4vh;
+    border-radius: 20px;
+    border: none;
+    font-weight: 1000;
+    /* transform: translate(60%, -430%); */
+
+      
+  } 
+
+
+  
+  .add-minutes1:active{
+    background-color: #9259DA;
+   
+  }
+  .minus-minutes1:active{
+    background-color:#9259DA;
+
+     
+   }
+  
+  /* 
+  Hours buttons
+  */
+  
+  .add-hours{
+    position: absolute;
+    transform: translate(-220%, -410%);
+   } 
 
 
 
-*/
+   .add-hours1{
+    height: 3.5vh;
+    width: 4vh;
+    margin: 10px;
+    border: none;
+    font-weight: 1000;
+    border-radius: 20px;
+
+   }
+
+
+   .minus-hours1{
+    height: 3.5vh;
+    width: 4vh;
+    border-radius: 20px;
+    border: none;
+    font-weight: 1000;
+
+      
+  } 
+
+
+
+  .add-hours1:active{
+    background-color: #9259DA;
+   
+  }
+  .minus-hours1:active{
+    background-color: #9259DA;
+
+     
+   }
+
+
 
 
 @media (max-width: 500px){
@@ -661,15 +737,6 @@ Seconds buttons
    }
 
 
-.add-seconds1:active{
-    background-color: blue;
-   
-  }
-  .minus-seconds1:active{
-    background-color: blue;
-
-     
-   }
   
     /**
   Minutes buttons
@@ -703,15 +770,7 @@ Seconds buttons
 
 
   
-  .add-minutes1:active{
-    background-color: blue;
-   
-  }
-  .minus-minutes1:active{
-    background-color: blue;
-
-     
-   }
+  
   
   /* 
   Hours buttons
@@ -744,15 +803,7 @@ Seconds buttons
 
 
 
-  .add-hours1:active{
-    background-color: blue;
-   
-  }
-  .minus-hours1:active{
-    background-color: blue;
-
-     
-   }
+  
   
   
 
@@ -999,15 +1050,7 @@ Seconds buttons
    }
 
 
-.add-seconds1:active{
-    background-color: blue;
-   
-  }
-  .minus-seconds1:active{
-    background-color: blue;
 
-     
-   }
   
     /**
   Minutes buttons
@@ -1041,15 +1084,6 @@ Seconds buttons
 
 
   
-  .add-minutes1:active{
-    background-color: blue;
-   
-  }
-  .minus-minutes1:active{
-    background-color: blue;
-
-     
-   }
   
   /* 
   Hours buttons
@@ -1082,15 +1116,6 @@ Seconds buttons
 
 
 
-  .add-hours1:active{
-    background-color: blue;
-   
-  }
-  .minus-hours1:active{
-    background-color: blue;
-
-     
-   }
     
 }
 
@@ -1211,15 +1236,6 @@ Seconds buttons
    }
 
 
-.add-seconds1:active{
-    background-color: blue;
-   
-  }
-  .minus-seconds1:active{
-    background-color: blue;
-
-     
-   }
   
     /**
   Minutes buttons
@@ -1253,15 +1269,7 @@ Seconds buttons
 
 
   
-  .add-minutes1:active{
-    background-color: blue;
-   
-  }
-  .minus-minutes1:active{
-    background-color: blue;
 
-     
-   }
   
   /* 
   Hours buttons
@@ -1293,16 +1301,6 @@ Seconds buttons
   } 
 
 
-
-  .add-hours1:active{
-    background-color: blue;
-   
-  }
-  .minus-hours1:active{
-    background-color: blue;
-
-     
-   }
 
 
      /* * *
@@ -1447,7 +1445,6 @@ Seconds buttons
 */
 
  .add-seconds{
-    /* background-color: beige; */
     left: 0%;
     position: absolute;
     transform: translate(320%, -205%);
@@ -1471,15 +1468,6 @@ Seconds buttons
    }
 
 
-.add-seconds1:active{
-    background-color: blue;
-   
-  }
-  .minus-seconds1:active{
-    background-color: blue;
-
-     
-   }
   
     /**
   Minutes buttons
@@ -1497,7 +1485,6 @@ Seconds buttons
     width: 4vh;
     margin: 10px; 
     border-radius: 20px;
-    /* transform: translate(50%, -430%); */
 
    }
 
@@ -1506,22 +1493,13 @@ Seconds buttons
     height: 3.5vh;
     width: 4vh;
     border-radius: 20px;
-    /* transform: translate(60%, -430%); */
 
       
   } 
 
 
   
-  .add-minutes1:active{
-    background-color: blue;
-   
-  }
-  .minus-minutes1:active{
-    background-color: blue;
 
-     
-   }
   
   /* 
   Hours buttons
@@ -1553,16 +1531,6 @@ Seconds buttons
   } 
 
 
-
-  .add-hours1:active{
-    background-color: blue;
-   
-  }
-  .minus-hours1:active{
-    background-color: blue;
-
-     
-   }
     
 }
 
@@ -1634,16 +1602,11 @@ Seconds buttons
 
     .semi-1{
         display: none;
-        /* font-size: 40PX;
-        transform: translate(5%, -190%); */
     
     }
 
     .semi-2{
         display: none;
-        /* font-size: 40PX;
-        transform: translate(-350%, -180%); */
-    
     }
 
 
@@ -1750,15 +1713,11 @@ Seconds buttons
 
     .semi-1{
         display: none;
-        /* font-size: 40PX;
-        transform: translate(5%, -190%); */
     
     }
 
     .semi-2{
         display: none;
-        /* font-size: 40PX;
-        transform: translate(-350%, -180%); */
     
     }
 
@@ -1872,15 +1831,11 @@ Hours buttons
 
 .semi-1{
     display: none;
-    /* font-size: 40PX;
-    transform: translate(200%, 20%); */
 
 }
 
 .semi-2{
     display: none;
-    /* font-size: 40PX;
-    transform: translate(-290%, 20%); */
 
 }
 
@@ -2004,7 +1959,6 @@ Seconds buttons
 */
 
  .add-seconds{
-    /* background-color: beige; */
     left: 0%;
     position: absolute;
     transform: translate(305%, -180%);
@@ -2028,15 +1982,7 @@ Seconds buttons
    }
 
 
-.add-seconds1:active{
-    background-color: blue;
-   
-  }
-  .minus-seconds1:active{
-    background-color: blue;
 
-     
-   }
   
     /**
   Minutes buttons
@@ -2054,7 +2000,6 @@ Seconds buttons
     width: 6vh;
     margin: 10px; 
     border-radius: 20px;
-    /* transform: translate(50%, -430%); */
 
    }
 
@@ -2063,22 +2008,13 @@ Seconds buttons
     height: 5vh;
     width: 6vh;
     border-radius: 20px;
-    /* transform: translate(60%, -430%); */
 
       
   } 
 
 
   
-  .add-minutes1:active{
-    background-color: blue;
-   
-  }
-  .minus-minutes1:active{
-    background-color: blue;
 
-     
-   }
   
   /* 
   Hours buttons
@@ -2111,15 +2047,6 @@ Seconds buttons
 
 
 
-  .add-hours1:active{
-    background-color: blue;
-   
-  }
-  .minus-hours1:active{
-    background-color: blue;
-
-     
-   }
 }
 
 @media screen and (min-width:910px) and (max-width:1100px) and (min-height: 320px) and (max-height: 450px){
@@ -2207,7 +2134,6 @@ Seconds buttons
 */
 
  .add-seconds{
-    /* background-color: beige; */
     left: 0%;
     position: absolute;
     transform: translate(305%, -180%);
@@ -2229,17 +2155,6 @@ Seconds buttons
     
      
    }
-
-
-.add-seconds1:active{
-    background-color: blue;
-   
-  }
-  .minus-seconds1:active{
-    background-color: blue;
-
-     
-   }
   
     /**
   Minutes buttons
@@ -2257,7 +2172,6 @@ Seconds buttons
     width: 6vh;
     margin: 10px; 
     border-radius: 20px;
-    /* transform: translate(50%, -430%); */
 
    }
 
@@ -2266,22 +2180,13 @@ Seconds buttons
     height: 5vh;
     width: 6vh;
     border-radius: 20px;
-    /* transform: translate(60%, -430%); */
 
       
   } 
 
 
   
-  .add-minutes1:active{
-    background-color: blue;
-   
-  }
-  .minus-minutes1:active{
-    background-color: blue;
 
-     
-   }
   
   /* 
   Hours buttons
@@ -2314,13 +2219,5 @@ Seconds buttons
 
 
 
-  .add-hours1:active{
-    background-color: blue;
-   
-  }
-  .minus-hours1:active{
-    background-color: blue;
 
-     
-   }
 }
