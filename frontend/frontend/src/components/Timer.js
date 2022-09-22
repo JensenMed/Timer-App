@@ -20,7 +20,6 @@ const Timer = (props) => {
 
 
     const btn = props.btn
-    const setBtn = props.setBtn
     const press = props.press
     const setPress = props.setPress
     const minutes = props.minutes
@@ -34,12 +33,10 @@ const Timer = (props) => {
     const title = props.title
     const setTitle = props.setTitle
     const total = props.total
-    const setTotal = props.setTotal
     const endSound = props.endSound
     const setEndSound = props.setEndSound
     const renderTimer = props.renderTimer
     const setRenderTimer = props.setRenderTimer
-    const image = props.image
     const setImage = props.setImage
     const timerRef = useRef()
     const longPressInit = useRef()

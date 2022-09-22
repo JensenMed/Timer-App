@@ -64,7 +64,6 @@
 
 
 .container{
-    /* background-color: aliceblue; */
     position: absolute;
     left: 50%;
     top: 50%;
@@ -139,12 +138,11 @@
 
 
 
-* *
+/* 
 Seconds buttons
-*/
+*/ 
 
  .add-seconds{
-    /* background-color: beige; */
     left: 0%;
     position: absolute;
     transform: translate(245%, -195%);
@@ -200,7 +198,6 @@ Seconds buttons
     border-radius: 20px;
     border: none;
     font-weight: 1000;
-    /* transform: translate(50%, -430%); */
 
    }
 
@@ -211,7 +208,6 @@ Seconds buttons
     border-radius: 20px;
     border: none;
     font-weight: 1000;
-    /* transform: translate(60%, -430%); */
 
       
   } 
@@ -713,7 +709,6 @@ Seconds buttons
 */
 
  .add-seconds{
-    /* background-color: beige; */
     left: 0%;
     position: absolute;
     transform: translate(245%, -195%);
@@ -754,7 +749,6 @@ Seconds buttons
     width: 4vh;
     margin: 10px; 
     border-radius: 20px;
-    /* transform: translate(50%, -430%); */
 
    }
 
@@ -763,7 +757,6 @@ Seconds buttons
     height: 3.5vh;
     width: 4vh;
     border-radius: 20px;
-    /* transform: translate(60%, -430%); */
 
       
   } 
@@ -778,7 +771,6 @@ Seconds buttons
   
   .add-hours{
     position: absolute;
-    /* background-color: beige; */
     transform: translate(-220%, -410%);
    } 
 
@@ -1026,7 +1018,6 @@ Seconds buttons
 */
 
  .add-seconds{
-    /* background-color: beige; */
     left: 0%;
     position: absolute;
     transform: translate(210%, -135%);
@@ -1068,7 +1059,6 @@ Seconds buttons
     width: 5vh;
     margin: 10px; 
     border-radius: 20px;
-    /* transform: translate(50%, -430%); */
 
    }
 
@@ -1077,7 +1067,6 @@ Seconds buttons
     height: 4vh;
     width: 5vh;
     border-radius: 20px;
-    /* transform: translate(60%, -430%); */
 
       
   } 
@@ -1091,7 +1080,6 @@ Seconds buttons
   
   .add-hours{
     position: absolute;
-    /* background-color: beige; */
     transform: translate(-185%, -320%);
    } 
 
@@ -1212,7 +1200,6 @@ Seconds buttons
 */
 
  .add-seconds{
-    /* background-color: beige; */
     left: 0%;
     position: absolute;
     transform: translate(230%, -185%);
@@ -1253,8 +1240,6 @@ Seconds buttons
     width: 4vh;
     margin: 10px; 
     border-radius: 20px;
-    /* transform: translate(50%, -430%); */
-
    }
 
 
@@ -1262,9 +1247,6 @@ Seconds buttons
     height: 3vh;
     width: 4vh;
     border-radius: 20px;
-    /* transform: translate(60%, -430%); */
-
-      
   } 
 
 
@@ -1277,7 +1259,6 @@ Seconds buttons
   
   .add-hours{
     position: absolute;
-    /* background-color: beige; */
     transform: translate(-240%, -440%);
    } 
 
@@ -1507,7 +1488,6 @@ Seconds buttons
   
   .add-hours{
     position: absolute;
-    /* background-color: beige; */
     transform: translate(-335%, -400%);
    } 
 
@@ -2022,7 +2002,6 @@ Seconds buttons
   
   .add-hours{
     position: absolute;
-    /* background-color: beige; */
     transform: translate(-320%, -450%);
    } 
 
@@ -2194,7 +2173,6 @@ Seconds buttons
   
   .add-hours{
     position: absolute;
-    /* background-color: beige; */
     transform: translate(-320%, -450%);
    } 
 

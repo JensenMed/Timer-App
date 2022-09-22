@@ -1,5 +1,5 @@
 
-
+//This file makes a sound object to be passes in to Clock.js/List.js
 
 import Geese from './Geese.wav'
 import Alarm from "./Alarm.wav"

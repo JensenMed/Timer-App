@@ -1,22 +1,19 @@
 
 
-import React, { useEffect, useState } from 'react'
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
-import useSound from 'use-sound';
-import ReactAudioPlayer from 'react-audio-player';
-// import { easeQuadInOut } from 'd3-ease';
-import sounds from './sounds/sounds'
+// This file handles the countdown timer and countdown sound/circle
 
+
+import React, { useEffect, useState } from 'react'
+import { CircularProgressbar} from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+import ReactAudioPlayer from 'react-audio-player';
 import "./css/List.css"
+
+
 const List = (props) => {
 
 
   const endSound = props.endSound
-
-  const[over, setOver] = useState(false)
-
   const[sound, setSound] = useState(<ReactAudioPlayer
     src= ""
     autoPlay = {true}
@@ -83,10 +80,10 @@ const List = (props) => {
 
 
 
-    function Idk(total){
+    function timerValues(total){
 
 
-        //Change th value of seconds
+        //Changes the value of seconds
         if(sec > 0){
             setSeconds(sec => sec -1)
             total = total - 1
@@ -114,6 +111,9 @@ const List = (props) => {
     }
 
 
+
+      //Sets the value of the start and timer
+
     useEffect(() => {
 
 
@@ -123,7 +123,7 @@ const List = (props) => {
                 setStart(false)
             }
             if(start === true && count != 0){
-                Idk(count)
+                timerValues(count)
             }
             else{
                 clearTimeout(myTimer)
@@ -137,20 +137,12 @@ const List = (props) => {
 
 
 
-    
-    function handleMouseOver(){
-
-      setOver(true)
-    }
-
-    function handleMouseOut(){
-      setOver(false)
-    }
 
 
 
 
 
+    // Effect state that changes based on if the values are true and will set the sound
     useEffect(() => {
 
       if(total === 0 && start === true){
@@ -199,43 +191,28 @@ const List = (props) => {
         
 
 
-        <div onTouchMove={handleMouseOut} onMouseOver = {handleMouseOver} onMouseOut = {handleMouseOut} >
+        <div>
           
         <CircularProgressbar value={total} maxValue = {start === true ? 100: total} textColor = 'red' text={total > 0 ? `${props.hours >= 10 ? props.hours: "0" + props.hours}:${props.minutes >= 10 ? props.minutes: "0" + props.minutes}:${props.seconds >= 10 ? props.seconds:"0" + props.seconds}`: `${'00:00:00'}`} styles={{
-    // Customize the root svg element
     root: {},
-    // Customize the path, i.e. the "completed progress"
     path: {
-      // Path color
       stroke: '#582C83',
-      // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
       strokeLinecap: 'butt',
-      // Customize transition animation
       transition: 'stroke-dashoffset 0.5s ease 0s',
-      // Rotate the path
       transform: 'rotate(0.25turn)',
       transformOrigin: 'center center',
     },
-    // Customize the circle behind the path, i.e. the "total progress"
     trail: {
-      // Trail color
       stroke: '#9259DA',
-      // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
       strokeLinecap: 'butt',
-      // Rotate the trail
       transform: 'rotate(0.25turn)',
       transformOrigin: 'center center',
     },
-    // Customize the text
     text: {
-      // textColor: '#f88',
-      // Text color
       fill:  '#9259DA',
-      // Text size
       fontSize: '20px',
       fontWeight: 'bold',
     },
-    // Customize background - only used when the `background` prop is true
     background: {
       fill: 'red',
     },

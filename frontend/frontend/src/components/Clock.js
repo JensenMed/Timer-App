@@ -1,12 +1,12 @@
 
-import React, {useState, useEffect, useRef} from 'react'
+
+//This file handles the clock buttons and main clock page
+// This is the parent file that passes props to childern 
+
+
+import React, {useState, useEffect} from 'react'
 import List from './List'
-// import Random from './Random'
 import Timer from './Timer'
-import { render } from '@testing-library/react';
-// import Random from './Random';
-// import Start from './Start'
-// import useLongPress from './Random.js'; 
 import './css/Clock.css'
 import Images from './images/images';
 
@@ -20,25 +20,13 @@ const Clock = () => {
     const[btn, setBtn] = useState(false)
     const[title, setTitle] = useState("")
     const[endSound, setEndSound] = useState()
-
     const[image,setImage] = useState()
-
-
-
-
-
     const[renderTimer, setRenderTimer] = useState(false)
-
-
-
-
     const[press, setPress] = useState("")
-
-
     const[start, setStart] = useState(false)
 
 
-  //   //start countdown
+  //start countdown
 
     function startCountdown(){
       setStart(!start)
@@ -47,6 +35,10 @@ const Clock = () => {
 
 
 
+
+
+
+    //UseEffect that will disable teh start button
 
 
     useEffect(() =>{
@@ -78,7 +70,7 @@ const Clock = () => {
 
 
 
-
+    // Function that will render the timer pop-up  on click
 
     function handleTimer(){
       if(start === false){
@@ -88,6 +80,9 @@ const Clock = () => {
         setRenderTimer(false)
       }
     }
+
+
+    // funtion that resets values of text Ex: '00:00:00'
 
     function resetValues(){
       setSeconds(0)
@@ -227,9 +222,6 @@ const Clock = () => {
         
         </div>
 
-        <span>
-          {/* <Random /> */}
-        </span>
         
 
 

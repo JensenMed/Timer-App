@@ -8,7 +8,6 @@ body {
 @media screen and (max-width: 500px) {
 
     body {
-        /* height: 100px; */
         background: url('../images/mdW.png') no-repeat center fixed;
         background-size: cover;
         background-size: 70vh 105vh;

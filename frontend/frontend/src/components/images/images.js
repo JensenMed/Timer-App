@@ -1,5 +1,5 @@
 
-
+//This file makes a image object to be passes in to Clock.js/Timer.js
 
 import Goose from './Goose.png'
 import Alarm from './Alarm.png'
@@ -11,7 +11,6 @@ const Images = [{
     id:0,
     label:"",
     value: ""
-
 
 },{
     id:1,
