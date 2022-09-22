@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Timer-App/static/css/main.09170cdf.css",
+    "main.js": "/Timer-App/static/js/main.a43d2d87.js",
+    "static/media/mdW.png": "/Timer-App/static/media/mdW.c4d85544476dc31f50ae.png",
+    "static/media/western4.png": "/Timer-App/static/media/western4.68bba29261a8fd1db28f.png",
+    "static/media/Applause.wav": "/Timer-App/static/media/Applause.e54e6e73a53efed69eb3.wav",
+    "static/media/Trombone.wav": "/Timer-App/static/media/Trombone.5b67b7bbb2fbadce6856.wav",
+    "static/media/Geese.wav": "/Timer-App/static/media/Geese.266eb150b012dccc41da.wav",
+    "static/media/Alarm.wav": "/Timer-App/static/media/Alarm.8847f0e9a734d9cb9657.wav",
+    "static/media/Goose.png": "/Timer-App/static/media/Goose.7cbcc386ff0394f9bc34.png",
+    "static/media/Alarm.png": "/Timer-App/static/media/Alarm.8a974d10a6dabe531b1e.png",
+    "static/media/Trombone.png": "/Timer-App/static/media/Trombone.5ffe9986573d65204667.png",
+    "static/media/Applause.png": "/Timer-App/static/media/Applause.907cde395f88d9543f02.png",
+    "index.html": "/Timer-App/index.html",
+    "main.09170cdf.css.map": "/Timer-App/static/css/main.09170cdf.css.map",
+    "main.a43d2d87.js.map": "/Timer-App/static/js/main.a43d2d87.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.09170cdf.css",
+    "static/js/main.a43d2d87.js"
+  ]
+}
